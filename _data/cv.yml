@@ -30,73 +30,86 @@ cv:
 
       - institution: St Catharine's College, Cambridge
         location: Cambridge, United Kingdom
-        area: Interdisciplinary Winter School
+        area: Interdisciplinary Winter School — Computer Science, Data Science, and Artificial Intelligence Track
         studyType: Winter School
         start_date: 2025-02
         end_date: 2025-02
 
     Research Experience:
       - company: University of California, Irvine
-        position: Summer Research Student — Autonomous Driving
+        position: Project Leader — PIKAN-Drive
         location: Irvine, California, USA
         start_date: 2026-06
-        end_date: 2026-08
-        summary: Studied KAN and physics-informed learning from PilotNet steering regression to Fast-BEV 3D detection.
+        end_date: present
+        summary: Developed a progressive physics-informed KAN framework for end-to-end steering-angle regression, from PilotNet steering regression toward BEV trajectory planning.
         highlights:
-          - Proposed physics-informed constraints, Full9 auxiliary losses, and targeted V2 ablations.
-          - Conducted most training, experiments, analysis, and the final presentation.
+          - Supervised by Prof. Fadi Kurdahi; compared PilotNet, MLP, KAN, and physics-informed KAN residual modules.
+          - Preprocessed and chronologically partitioned 45,406 sequential driving samples from the Udacity self-driving dataset and established a unified training, testing, and model-preservation workflow.
+          - Evaluated steering smoothness, steering-rate, and vehicle-state consistency constraints with MAE and RMSE.
 
       - company: Institute of Automation, Chinese Academy of Sciences
-        position: Research Student — Intelligent CAD and Point-Cloud Geometry
+        position: Research Assistant — Intelligent CAD and Point-Cloud Geometry
         location: Beijing, China
         start_date: 2026-02
-        end_date: 2026
-        summary: Explored intelligent CAD generation and point-cloud geometric understanding.
+        end_date: present
+        summary: Explored LLM-based intelligent CAD generation and point-cloud surface segmentation optimisation at the National Laboratory of Pattern Recognition.
         highlights:
-          - Worked on prompt optimisation and dimensional and geometric constraints for CAD generation.
-          - Reproduced Point2CAD and ParSeNet and explored multi-view projection boundary information.
+          - Supervised by Prof. Dong-Ming Yan and Prof. Mingyang Zhao; evaluated a tool-augmented vision-language CAD workflow for task planning, code generation, geometric modelling, and execution-feedback correction.
+          - Optimised prompts for CAD sketch constraints and parametric modelling using dimensional and geometric constraints.
+          - Reproduced Point2CAD and ParSeNet, implemented their data-interface compatibility, and investigated three-axis projection boundary detection and geometric consistency.
 
       - company: Southwest Jiaotong University × University of Leeds
-        position: Research Student — 3D Railway Scene Reconstruction
+        position: Project Leader — 3D Railway Scene Reconstruction
         location: Chengdu, China
         start_date: 2025
         end_date: 2026-05
-        summary: Developed a railway-scene reconstruction pipeline combining monocular depth, LiDAR metric correction, and segmentation boundary constraints.
+        summary: Developed the FrustumDense-SAM-XC3D railway-scene reconstruction system using multi-frame LiDAR, RGB images, and monocular depth.
         highlights:
-          - Proposed multi-frame frustum LiDAR fusion and LiDAR-based correction of monocular depth.
+          - Supervised by Prof. Zhao Tang; proposed multi-frame frustum back-projection densification for spatial aggregation across current, historical, and future frames.
+          - Integrated DepthPro-based monocular metric depth with LiDAR pose constraints and semantic boundary information for dense 3D reconstruction.
+          - Applied multi-frame object-boundary detection, occlusion handling, and co-visibility consistency checks for large-scale railway scenes.
 
       - company: Southwest Jiaotong University × University of Leeds
-        position: Research Student — Sparse Point-Cloud Reconstruction
+        position: Project Leader — Sparse Point-Cloud Reconstruction
         location: Chengdu, China
         start_date: 2024
         end_date: 2025
-        summary: Investigated high-speed train head reconstruction from sparse LiDAR observations.
+        summary: Investigated machine-learning-driven reconstruction of high-speed train head shapes from sparse LiDAR observations.
         highlights:
-          - Designed tri-axial projection, explicit hole-point generation, reverse hole-boundary reasoning, and multi-directional interpolation.
+          - Supervised by Prof. Zhao Tang; participated in building a portable multi-sensor acquisition device using LiDAR, cameras, and IMUs.
+          - Designed tri-axial projection, explicit hole-point generation, reverse hole-boundary reasoning, and multi-directional interpolation, improving model integrity from approximately 75% to 98%.
+          - Independently authored the technical research report on sparse point-cloud train-head surface reconstruction.
 
     Project Experience:
       - company: FPGA Digital System Design
-        position: Project Work
-        start_date: 2024
-        end_date: 2024
-        summary: Designed and integrated hierarchical digital modules with logic simulation, waveform analysis, and FPGA testing.
+        position: Project Work — Quartus and HDL
+        start_date: 2026-05
+        end_date: 2026-06
+        summary: Developed functional modules for a hierarchical digital system, connected modules through predefined ports, and performed logic simulation, waveform analysis, and FPGA hardware testing.
 
       - company: STM32 Embedded Systems
-        position: Project Work
-        start_date: 2024
-        end_date: 2024
-        summary: Built sensor and microcontroller projects connecting control logic with physical system behaviour.
+        position: Project Work — Embedded Game Development
+        start_date: 2026-04
+        end_date: 2026-06
+        summary: Collaborated in a three-person team to develop an STM32-based embedded game, contributing core game mechanics and an independent feature or level; managed code with GitHub and documented testing and demonstrations.
 
       - company: Audio-Visualisation PCB Design
         position: Project Work
-        start_date: 2024
-        end_date: 2024
-        summary: Completed schematic design, PCB layout, soldering, measurement, and debugging.
+        start_date: 2026-03
+        end_date: 2026-05
+        summary: Created the schematic and PCB layout for an audio-visualisation circuit in KiCad, soldered components, and used a multimeter for measurement and troubleshooting.
 
       - company: Optoelectronic Project
         position: Project Work
-        start_date: 2024
-        end_date: 2024
+        start_date: 2025-10
+        end_date: 2026-03
+        summary: Worked in an international team with University of Leeds students to design an optoelectronic system for a space-related challenge and produced an English-language design presentation video.
+
+      - company: MCU Embedded Systems
+        position: Project Work — Line-Following Model Car and Washing Machine Controller
+        start_date: 2025-04
+        end_date: 2025-05
+        summary: Programmed STM32-based control systems using Keil5 and Mbed, including a line-following model car and washing-machine controller.
 
     Leadership:
       - company: Academic Innovation Base, SWJTU–Leeds Joint School
@@ -135,4 +148,14 @@ cv:
 
       - name: Project experience
         icon: fa-solid fa-toolbox
-        keywords: Linux, MATLAB, ROS2, PCL, OpenCV, STM32, Git, PyTorch
+        keywords: Linux, MATLAB, ROS2, FAST-LIO, FAST-LIVO2, R3LIVE, VTK, PCL, OpenCV, STM32, Git, PyTorch
+
+    Languages:
+      - name: Mandarin
+        summary: Native speaker
+      - name: English
+        summary: Fluent
+
+    Interests:
+      - name: Personal interests
+        summary: Eight Brocades and Simplified 24-Form Tai Chi Chuan
