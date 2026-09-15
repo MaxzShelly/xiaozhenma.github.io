@@ -35,7 +35,7 @@ cv:
         start_date: 2025-02
         end_date: 2025-02
 
-    Research Experience:
+    Experience:
       - company: University of California, Irvine
         position: Project Leader — PIKAN-Drive
         location: Irvine, California, USA
@@ -80,48 +80,37 @@ cv:
           - Designed tri-axial projection, explicit hole-point generation, reverse hole-boundary reasoning, and multi-directional interpolation, improving model integrity from approximately 75% to 98%.
           - Independently authored the technical research report on sparse point-cloud train-head surface reconstruction.
 
-    Project Experience:
-      - company: FPGA Digital System Design
-        position: Project Work — Quartus and HDL
+    Projects:
+      - name: FPGA Digital System Design — Quartus and HDL
         start_date: 2026-05
         end_date: 2026-06
         summary: Developed functional modules for a hierarchical digital system, connected modules through predefined ports, and performed logic simulation, waveform analysis, and FPGA hardware testing.
 
-      - company: STM32 Embedded Systems
-        position: Project Work — Embedded Game Development
+      - name: STM32 Embedded Systems — Embedded Game Development
         start_date: 2026-04
         end_date: 2026-06
         summary: Collaborated in a three-person team to develop an STM32-based embedded game, contributing core game mechanics and an independent feature or level; managed code with GitHub and documented testing and demonstrations.
 
-      - company: Audio-Visualisation PCB Design
-        position: Project Work
+      - name: Audio-Visualisation PCB Design
         start_date: 2026-03
         end_date: 2026-05
         summary: Created the schematic and PCB layout for an audio-visualisation circuit in KiCad, soldered components, and used a multimeter for measurement and troubleshooting.
 
-      - company: Optoelectronic Project
-        position: Project Work
+      - name: Optoelectronic Project
         start_date: 2025-10
         end_date: 2026-03
         summary: Worked in an international team with University of Leeds students to design an optoelectronic system for a space-related challenge and produced an English-language design presentation video.
 
-      - company: MCU Embedded Systems
-        position: Project Work — Line-Following Model Car and Washing Machine Controller
+      - name: MCU Embedded Systems — Line-Following Model Car and Washing Machine Controller
         start_date: 2025-04
         end_date: 2025-05
         summary: Programmed STM32-based control systems using Keil5 and Mbed, including a line-following model car and washing-machine controller.
 
     Leadership:
-      - company: Academic Innovation Base, SWJTU–Leeds Joint School
-        position: Member → Head of Activities → President
-        location: Chengdu, China
-        start_date: 2023
-        end_date: present
-        highlights:
-          - Coordinated a 30+ member student organisation across four departments.
-          - Worked with 80+ guests and collaborators; organised Leeds Tech Month and activities involving 500+ teams and reaching 3,000+ students and faculty.
+      - label: Academic Innovation Base, SWJTU–Leeds Joint School (Member → Head of Activities → President, 2023–Present)
+        details: Coordinated a 30+ member student organisation across four departments; worked with 80+ guests and collaborators; organised Leeds Tech Month and activities involving 500+ teams and reaching 3,000+ students and faculty.
 
-    Honors:
+    Awards:
       - title: Second Prize, AI Innovation Track
         date: 2025
         awarder: 27th China Robot & Artificial Intelligence Competition — National Finals
@@ -133,15 +122,13 @@ cv:
         date: 2024
 
     Research Reports:
-      - title: Three-Dimensional Surface Reconstruction of High-Speed Train Heads from Sparse Point Clouds
-        publisher: Technical Research Report
-        releaseDate: 2025
+      - label: Three-Dimensional Surface Reconstruction of High-Speed Train Heads from Sparse Point Clouds (2025)
+        details: Technical Research Report
 
-      - title: Sparse Point Cloud 3D Railway Scene Reconstruction Driven by Monocular Metric Depth Estimation
-        publisher: Project Final Technical Report
-        releaseDate: 2026
+      - label: Sparse Point Cloud 3D Railway Scene Reconstruction Driven by Monocular Metric Depth Estimation (2026)
+        details: Project Final Technical Report
 
-    Technical Skills:
+    Skills:
       - name: Proficient / strongest
         icon: fa-solid fa-code
         keywords: Python, C, C++
