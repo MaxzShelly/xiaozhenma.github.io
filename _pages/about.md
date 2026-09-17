@@ -37,10 +37,10 @@ I am particularly interested in combining learned semantic and structural priors
 ## Research Interests
 
 <div class="row row-cols-1 row-cols-md-2 g-5 mb-5">
-  <div class="col"><div class="card h-100"><div class="card-body"><h3 class="card-title">3D Perception</h3><p class="card-text">Reliable 3D representation from images, depth, point clouds, and multimodal sensor observations, especially under sparse, occluded, or incomplete conditions.</p></div></div></div>
-  <div class="col"><div class="card h-100"><div class="card-body"><h3 class="card-title">Spatial Intelligence</h3><p class="card-text">Understanding distance, orientation, visibility, connectivity, containment, contact, and topology rather than relying only on visual similarity.</p></div></div></div>
-  <div class="col"><div class="card h-100"><div class="card-body"><h3 class="card-title">Geometry-Aware Learning</h3><p class="card-text">Combining learned semantic and structural priors with explicit geometry, sensor measurements, topology, and deterministic constraints.</p></div></div></div>
-  <div class="col"><div class="card h-100"><div class="card-body"><h3 class="card-title">Robotic Perception</h3><p class="card-text">Connecting reliable spatial understanding with downstream reasoning, planning, and action in robotic and autonomous systems.</p></div></div></div>
+  <div class="col"><div class="card h-100"><div class="card-body p-3"><h4 class="card-title mb-2">3D Perception</h4><p class="card-text small mb-0">Reliable 3D representation from images, depth, point clouds, and multimodal sensor observations, especially under sparse, occluded, or incomplete conditions.</p></div></div></div>
+  <div class="col"><div class="card h-100"><div class="card-body p-3"><h4 class="card-title mb-2">Spatial Intelligence</h4><p class="card-text small mb-0">Understanding distance, orientation, visibility, connectivity, containment, contact, and topology rather than relying only on visual similarity.</p></div></div></div>
+  <div class="col"><div class="card h-100"><div class="card-body p-3"><h4 class="card-title mb-2">Geometry-Aware Learning</h4><p class="card-text small mb-0">Combining learned semantic and structural priors with explicit geometry, sensor measurements, topology, and deterministic constraints.</p></div></div></div>
+  <div class="col"><div class="card h-100"><div class="card-body p-3"><h4 class="card-title mb-2">Robotic Perception</h4><p class="card-text small mb-0">Connecting reliable spatial understanding with downstream reasoning, planning, and action in robotic and autonomous systems.</p></div></div></div>
 </div>
 
 <h2 class="mt-5">Selected Research</h2>

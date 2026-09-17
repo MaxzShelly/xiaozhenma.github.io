@@ -2,9 +2,8 @@ cv:
   name: Xiaozhen Ma
   label: 3D Perception and Spatial Intelligence
   email: shellyma626@163.com
-  location: Chengdu, China
   image: ""
-  summary: Electronic and Electrical Engineering undergraduate working on reliable 3D perception, geometric learning, and spatial intelligence.
+  summary: Electronic and Electrical Engineering undergraduate working on computer vision, 3D reconstruction, robotic perception, and autonomous driving.
 
   social_networks:
     - network: GitHub
@@ -12,136 +11,131 @@ cv:
 
   sections:
     Education:
-      - institution: Southwest Jiaotong University × University of Leeds
-        location: Chengdu, China
-        area: Electronic and Electrical Engineering
+      - institution: Southwest Jiaotong University and University of Leeds — Chengdu, China
+        area: Bachelor of Engineering in Electronic and Electrical Engineering (Joint Program, dual degree from both universities)
         studyType: Bachelor of Engineering
         start_date: 2023-09
         end_date: 2027-07
-        highlights:
-          - Joint degree programme in Electronic and Electrical Engineering.
 
-      - institution: University of California, Irvine
-        location: Irvine, California, USA
+      - institution: University of California, Irvine — Irvine, California, USA
         area: UCInspire Summer Research Programme
         studyType: Summer Research Programme
         start_date: 2026-06
         end_date: 2026-08
 
-      - institution: St Catharine's College, Cambridge, United Kingdom
-        area: Computer Science, Data Science, and Artificial Intelligence Track
+      - institution: St Catharine's College, Cambridge — Cambridge, United Kingdom
+        area: Interdisciplinary Winter School (Computer Science, Data Science, and Artificial Intelligence Track)
         studyType: Winter School
         start_date: 2025-02
         end_date: 2025-02
 
+    Research Interests:
+      - label: Areas
+        details: Computer Vision, 3D Reconstruction, Robotic Perception, and Autonomous Driving.
+
     Experience:
       - company: University of California, Irvine
-        position: Project Leader — PIKAN-Drive
+        position: "Project Lead — PIKAN-Drive: Progressive Physics-Informed KANs from PilotNet Steering Regression to Fast-BEV 3D Detection"
         location: Irvine, California, USA
         start_date: 2026-06
         end_date: present
-        summary: Developed a progressive physics-informed KAN framework for end-to-end steering-angle regression, from PilotNet steering regression toward BEV trajectory planning.
+        summary: Led a progressive study of MLP, KAN, and PI-KAN architectures from PilotNet steering regression to Fast-BEV multi-camera 3D detection, establishing unified training, evaluation, and ablation pipelines.
         highlights:
-          - Supervised by Prof. Fadi Kurdahi; compared PilotNet, MLP, KAN, and physics-informed KAN residual modules.
-          - Preprocessed and chronologically partitioned 45,406 sequential driving samples from the Udacity self-driving dataset and established a unified training, testing, and model-preservation workflow.
-          - Evaluated steering smoothness, steering-rate, and vehicle-state consistency constraints with MAE and RMSE.
+          - Built a PilotNet benchmark on 45,406 sequential Udacity samples; the best PI-KAN achieved MAE 3.209 and RMSE 6.163, reducing error by 11.3% and 9.7% relative to the MLP baseline.
+          - Improved the Fast-BEV KAN baseline from 0.2559 to 0.2720 mAP and from 0.3950 to 0.4046 NDS.
+          - Designed nine grouped physics-informed auxiliary losses and conducted targeted Fast-BEV ablations; additional constraints did not consistently improve detection, motivating task-specific, metric-aligned, and architecture-aware supervision.
+          - Supervised by Prof. Fadi Kurdahi.
 
-      - company: Institute of Automation, Chinese Academy of Sciences
-        position: Research Assistant — Intelligent CAD and Point-Cloud Geometry
+      - company: National Laboratory of Pattern Recognition, Institute of Automation, Chinese Academy of Sciences
+        position: Research Assistant — Intelligent CAD Generation and Point-Cloud-to-Editable-CAD Reconstruction
         location: Beijing, China
         start_date: 2026-02
         end_date: present
-        summary: Explored LLM-based intelligent CAD generation and point-cloud surface segmentation optimisation at the National Laboratory of Pattern Recognition.
+        summary: Developed and evaluated tool-augmented CAD generation and point-cloud-to-parametric-CAD reconstruction workflows.
         highlights:
-          - Supervised by Prof. Dong-Ming Yan and Prof. Mingyang Zhao; evaluated a tool-augmented vision-language CAD workflow for task planning, code generation, geometric modelling, and execution-feedback correction.
-          - Optimised prompts for CAD sketch constraints and parametric modelling using dimensional and geometric constraints.
-          - Reproduced Point2CAD and ParSeNet, implemented their data-interface compatibility, and investigated three-axis projection boundary detection and geometric consistency.
+          - Deployed and evaluated CAD-Assistant through the FreeCAD Python API; optimised prompts with dimensional and geometric constraints to improve code executability, solid validity, and parametric-modelling quality.
+          - Reproduced Point2CAD and ParSeNet, implemented data-interface compatibility, and investigated multi-view and three-axis projection boundary constraints through comparative experiments.
+          - Developed a CAD-Recode-based pipeline that generates executable CadQuery programs from point clouds, validates them through CadQuery and OpenCascade/OCP, and produces editable CAD programs with B-Rep, STEP, and Solid outputs.
+          - Designed CAD-knowledge supervision, geometric verification, parameter refinement, structural diagnosis, and multi-candidate selection. The confirmed S2@100 pipeline reduced median Chamfer Distance by 13.4% relative to S0@10 while improving mean, P90, and mean IoU without reducing solid validity.
+          - Supervised by Prof. Dong-Ming Yan and Prof. Mingyang Zhao.
 
-      - company: Southwest Jiaotong University × University of Leeds
-        position: Project Leader — 3D Railway Scene Reconstruction
+      - company: State Key Laboratory of Rail Transit Vehicle System, Southwest Jiaotong University
+        position: Project Lead — Sparse Point Cloud 3D Railway Scene Reconstruction Technology Driven by Monocular Depth Estimation
         location: Chengdu, China
-        start_date: 2025
+        start_date: 2025-04
         end_date: 2026-05
         summary: Developed the FrustumDense-SAM-XC3D railway-scene reconstruction system using multi-frame LiDAR, RGB images, and monocular depth.
         highlights:
-          - Supervised by Prof. Zhao Tang; proposed multi-frame frustum back-projection densification for spatial aggregation across current, historical, and future frames.
-          - Integrated DepthPro-based monocular metric depth with LiDAR pose constraints and semantic boundary information for dense 3D reconstruction.
-          - Applied multi-frame object-boundary detection, occlusion handling, and co-visibility consistency checks for large-scale railway scenes.
+          - Integrated point-cloud densification, depth fusion, object segmentation, occlusion handling, and scene visualisation into a single pipeline.
+          - Proposed multi-frame frustum back-projection densification across current, historical, and future frames to improve coverage and structural completeness around buildings, tracks, and trackside facilities.
+          - Integrated DepthPro metric depth with LiDAR pose constraints, patch-wise fitting, boundary resampling, and moving least-squares prediction to correct distant-region scale errors and generate dense 3D point clouds.
+          - Applied SAM3 to multi-frame image segmentation and object-boundary detection, with nested-object and occlusion management plus cross-frame co-visibility consistency checks.
+          - Designed class-aware radius filtering and patch-based rendering to suppress fusion noise and visualise railway assets by category.
+          - Supervised by Prof. Zhao Tang.
 
-      - company: Southwest Jiaotong University × University of Leeds
-        position: Project Leader — Sparse Point-Cloud Reconstruction
+      - company: State Key Laboratory of Rail Transit Vehicle System, Southwest Jiaotong University
+        position: Project Lead — Machine Learning-Driven 3D Reconstruction of High-Speed Train Head Shapes
         location: Chengdu, China
-        start_date: 2024
-        end_date: 2025
-        summary: Investigated machine-learning-driven reconstruction of high-speed train head shapes from sparse LiDAR observations.
+        start_date: 2024-04
+        end_date: 2025-03
+        summary: Investigated robust reconstruction of high-speed train heads from sparse point-cloud observations.
         highlights:
-          - Supervised by Prof. Zhao Tang; participated in building a portable multi-sensor acquisition device using LiDAR, cameras, and IMUs.
-          - Designed tri-axial projection, explicit hole-point generation, reverse hole-boundary reasoning, and multi-directional interpolation, improving model integrity from approximately 75% to 98%.
-          - Independently authored the technical research report on sparse point-cloud train-head surface reconstruction.
+          - Constructed a portable multi-sensor acquisition device with LiDAR, cameras, and IMUs; developed a radar-vision tightly coupled SLAM framework based on FAST-LIVO2 with extended Kalman filtering for camera-pose optimisation.
+          - Improved registration with enhanced ICP and dynamic-threshold denoising; generated uniform, high-precision point clouds through normal-vector estimation and resampling.
+          - Introduced an incremental k-d tree for map storage and retrieval, plus motion-consistency-based dynamic-object exclusion for localisation robustness.
+          - Proposed tri-axial projection segmentation interpolation and reverse hole-boundary identification, raising model integrity from 75% to 98%.
+          - Explored Greedy triangulation, Poisson reconstruction, B-spline interpolation, Moving Cuboid, and radial-basis-function interpolation for complex surface modelling.
+          - Independently authored the technical report Three-Dimensional Surface Reconstruction of High-Speed Train Noses from Sparse Point Clouds.
+          - Supervised by Prof. Zhao Tang.
 
     Projects:
-      - name: FPGA Digital System Design — Quartus and HDL
+      - name: FPGA-Based Digital System Design
         start_date: 2026-05
         end_date: 2026-06
-        summary: Developed functional modules for a hierarchical digital system, connected modules through predefined ports, and performed logic simulation, waveform analysis, and FPGA hardware testing.
+        summary: Developed functional modules for a hierarchical digital system using Quartus and a hardware description language; connected modules through predefined ports, performed logic simulation and waveform analysis, and completed FPGA hardware testing.
 
-      - name: STM32 Embedded Systems — Embedded Game Development
+      - name: STM32-Based Embedded Game Development
         start_date: 2026-04
         end_date: 2026-06
-        summary: Collaborated in a three-person team to develop an STM32-based embedded game, contributing core game mechanics and an independent feature or level; managed code with GitHub and documented testing and demonstrations.
+        summary: Collaborated in a three-person team to develop an STM32 embedded game, contributing core mechanics and an independent feature or level; managed code with GitHub and documented development logs, system tests, and demonstrations.
 
-      - name: Audio-Visualisation PCB Design
+      - name: Audio-Visualisation PCB Design and Fabrication
         start_date: 2026-03
         end_date: 2026-05
-        summary: Created the schematic and PCB layout for an audio-visualisation circuit in KiCad, soldered components, and used a multimeter for measurement and troubleshooting.
+        summary: Created a KiCad schematic and PCB layout for an audio-visualisation circuit using LEDs for low-, mid-, and high-frequency signals; soldered components and used a multimeter for measurement and troubleshooting.
 
-      - name: Optoelectronic Project
+      - name: Emerging Optoelectronic System Design
         start_date: 2025-10
         end_date: 2026-03
-        summary: Worked in an international team with University of Leeds students to design an optoelectronic system for a space-related challenge and produced an English-language design presentation video.
+        summary: Worked in an international team with University of Leeds students to research and design an optoelectronic system for a space-related challenge, including technical principles, commercial applications, environmental impact, engineering ethics, and an English-language design presentation video.
 
       - name: MCU Embedded Systems — Line-Following Model Car and Washing Machine Controller
         start_date: 2025-04
         end_date: 2025-05
-        summary: Programmed STM32-based control systems using Keil5 and Mbed, including a line-following model car and washing-machine controller.
-
-    Leadership:
-      - label: Academic Innovation Base, SWJTU–Leeds Joint School (Member → Head of Activities → President, 2023–Present)
-        details: Coordinated a 30+ member student organisation across four departments; worked with 80+ guests and collaborators; organised Leeds Tech Month and activities involving 500+ teams and reaching 3,000+ students and faculty.
+        summary: Programmed an STM32 line-following model car in Keil5 with LED display and MOSFET-based motion control, and implemented a washing-machine controller in Mbed with mode selection, child lock, time selection, pressure response, and light sensitivity.
 
     Awards:
       - title: Second Prize, AI Innovation Track
         date: 2025
         awarder: 27th China Robot & Artificial Intelligence Competition — National Finals
+        summary: An Online Sports Course Evaluation System Based on Multi-Expert Collaborative Systems and Sentiment Analysis.
 
       - title: Outstanding Student Leader
         date: 2025
+        awarder: SWJTU–Leeds Joint School, Southwest Jiaotong University
 
       - title: Mingcheng Award
         date: 2024
+        awarder: SWJTU–Leeds Joint School, Southwest Jiaotong University
 
-    Research Reports:
-      - label: Three-Dimensional Surface Reconstruction of High-Speed Train Heads from Sparse Point Clouds (2025)
-        details: Technical Research Report
+    Extracurricular Activities and Volunteer:
+      - label: Academic Innovation Base of SWJTU–Leeds Joint School, Southwest Jiaotong University (Sep 2023–Present)
+        details: Member (2023–2024); Head of Activities (2024–2025); President (2025–Present). As president, coordinated 30+ members across 4 departments, liaised with 80+ guests, planned events, venues, and themes, and led Leeds Tech Month, attracting 500+ teams and reaching 3,000+ faculty and students.
 
-      - label: Sparse Point Cloud 3D Railway Scene Reconstruction Driven by Monocular Metric Depth Estimation (2026)
-        details: Project Final Technical Report
-
-    Skills:
-      - name: Proficient / strongest
-        icon: fa-solid fa-code
-        keywords: Python, C, C++
-
-      - name: Project experience
-        icon: fa-solid fa-toolbox
-        keywords: Linux, MATLAB, ROS2, FAST-LIO, FAST-LIVO2, R3LIVE, VTK, PCL, OpenCV, STM32, Git, PyTorch
-
-    Languages:
-      - name: Mandarin
-        summary: Native speaker
-      - name: English
-        summary: Fluent
-
-    Interests:
-      - name: Personal interests
-        summary: Eight Brocades and Simplified 24-Form Tai Chi Chuan
+    Technical Skills:
+      - label: Technical Skills
+        details: C/C++/Python/MATLAB (VS2017, MbedStudio, OnlineGDB, Keil5); ROS2; Linux; SLAM (FAST-LIO, FAST-LIVO2, R3LIVE); point-cloud and 3D reconstruction; VTK, PCL, OpenCV; embedded integration (STM32).
+      - label: Languages
+        details: Mandarin (Native); English (Fluent).
+      - label: Interests
+        details: Eight Brocades; Simplified 24-Form Tai Chi Chuan.
