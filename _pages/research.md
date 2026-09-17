@@ -2,67 +2,60 @@
 layout: page
 title: Research
 permalink: /research/
-description: From 3D Reconstruction to Spatial Intelligence
+description: 3D reconstruction, geometric reasoning, and reliable spatial perception.
 nav: true
 nav_order: 2
 ---
 
-## From 3D Reconstruction to Spatial Intelligence
+## Sparse Point Cloud Reconstruction of High-Speed Train Head Geometry
 
-My research interests have developed around one recurring question:
+My research explores how machines can recover reliable 3D structure when observations are sparse, incomplete, or uncertain. A central project in this direction is the reconstruction of streamlined high-speed train head geometry from sparse LiDAR observations.
 
-> **How can machines reconstruct, understand, and validate the 3D world when observations are incomplete?**
+The work used a portable sensing system combining LiDAR, cameras, and an IMU, with FAST-LIVO2 as the multi-sensor SLAM backbone. The goal was to recover a sufficiently continuous geometric representation for surface reconstruction, rather than merely collecting a point cloud.
 
-In sparse railway reconstruction, this problem appeared as missing LiDAR measurements. In monocular depth estimation, it appeared as visually plausible but metrically inaccurate geometry. In intelligent CAD, it became the difference between visual similarity and correct topology or connectivity. In autonomous driving, it further raised the question of whether improved perception actually benefits downstream behaviour.
+<div class="row row-cols-1 row-cols-md-2 g-4 my-4">
+  <div class="col"><figure class="mb-0 border rounded p-2 h-100"><img class="img-fluid rounded" src="{{ '/assets/img/train-reconstruction/01_train_head_photo.png' | relative_url }}" alt="Physical high-speed train head"><figcaption class="text-muted small mt-2">Physical high-speed train head.</figcaption></figure></div>
+  <div class="col"><figure class="mb-0 border rounded p-2 h-100"><img class="img-fluid rounded" src="{{ '/assets/img/train-reconstruction/02_sparse_lidar_scan.png' | relative_url }}" alt="Sparse LiDAR scan of the high-speed train head"><figcaption class="text-muted small mt-2">Sparse LiDAR scan. Window regions contain particularly significant missing returns.</figcaption></figure></div>
+</div>
 
-These experiences gradually shifted my interest from 3D reconstruction toward 3D perception and spatial intelligence.
+## The Research Question
 
-## Research Journey
+Glass surfaces often produce large regions with few or no valid LiDAR returns. Direct interpolation becomes unreliable because the missing region has little local geometric support; directly meshing the sparse cloud can also create surfaces that do not correspond to the actual train geometry.
 
-### 2023 — Curiosity from Autonomous Driving
+> **How can we identify the geometry of a missing region when the region itself contains almost no observations?**
 
-An L2 driving-assistance system first made me wonder how a machine converts sensor observations into a unified representation of lanes, vehicles, obstacles, distances, and planned trajectories.
+## Missing-Region Reasoning
 
-### 2024 — Sparse 3D Reconstruction
+Instead of detecting boundaries only among existing points, I represented the problem through explicit missing regions. The point cloud was projected onto three orthogonal planes, where holes that were difficult to recognise directly in 3D became visible from complementary 2D views.
 
-I began working on high-speed train reconstruction from sparse LiDAR observations and encountered severe missing regions caused by glass surfaces. Instead of continuing to search for boundaries only among existing points, I explored representing missing regions explicitly through tri-axial projection and reverse hole-boundary reasoning.
+```text
+Sparse point cloud → tri-axial projection → hole-point generation
+→ missing-region clustering → reverse hole-boundary extraction
+→ multi-directional interpolation → fusion → surface reconstruction
+```
 
-**Core lesson:** Changing the representation of a problem can be more important than making the original method more complicated.
+This changes the question from _“Where does the observed surface end?”_ to _“Where should points exist but do not, and what observed geometry surrounds that empty region?”_
 
-### 2025 — Learning-Based Reconstruction
+<figure class="my-4 border rounded p-2">
+  <img class="img-fluid rounded" src="{{ '/assets/img/train-reconstruction/03_triaxial_projection.png' | relative_url }}" alt="Tri-axial projection diagram of the train point cloud">
+  <figcaption class="text-muted small mt-2">Tri-axial projection. Different orthogonal views expose missing regions that are difficult to identify directly in the original 3D point cloud.</figcaption>
+</figure>
 
-I explored pretrained monocular depth models for dense railway-scene reconstruction. Although the predicted depth maps appeared visually complete, some reconstructed 3D structures exhibited incorrect relative distances.
+## Results and Perspective
 
-**Core lesson:** Visual plausibility does not guarantee geometric reliability.
+The original scan covered approximately 90% of the train-head geometry, while the largest holes were concentrated around glass surfaces. Explicit missing-region detection and multi-directional interpolation substantially recovered the side-window regions; one rear area remained incomplete because surrounding boundary observations were insufficient.
 
-### 2026 — Intelligent CAD
+After point-cloud completion, Greedy Triangulation, Poisson Reconstruction, and Marching Cubes were compared. Greedy Triangulation best preserved the completed curved train-head geometry in the project experiments and was selected for the final pipeline.
 
-In intelligent CAD experiments, generated models could have plausible external shapes while containing incorrect hole positions, axis locations, topology, or connections between primitives. This moved my interest from reconstructing shapes toward understanding geometry and spatial relationships.
+<div class="row row-cols-1 row-cols-md-2 g-4 my-4">
+  <div class="col"><figure class="mb-0 border rounded p-2 h-100"><img class="img-fluid rounded" src="{{ '/assets/img/train-reconstruction/04_hole_before_top.png' | relative_url }}" alt="Top view before missing-region completion"><figcaption class="text-muted small mt-2">Before completion — top view.</figcaption></figure></div>
+  <div class="col"><figure class="mb-0 border rounded p-2 h-100"><img class="img-fluid rounded" src="{{ '/assets/img/train-reconstruction/05_hole_after_top.png' | relative_url }}" alt="Top view after missing-region completion"><figcaption class="text-muted small mt-2">After completion — top view.</figcaption></figure></div>
+  <div class="col"><figure class="mb-0 border rounded p-2 h-100"><img class="img-fluid rounded" src="{{ '/assets/img/train-reconstruction/06_hole_before_side.png' | relative_url }}" alt="Side view before missing-region completion"><figcaption class="text-muted small mt-2">Before completion — side view.</figcaption></figure></div>
+  <div class="col"><figure class="mb-0 border rounded p-2 h-100"><img class="img-fluid rounded" src="{{ '/assets/img/train-reconstruction/07_hole_after_side.png' | relative_url }}" alt="Side view after missing-region completion"><figcaption class="text-muted small mt-2">After completion — side view.</figcaption></figure></div>
+</div>
 
-### 2026 — Autonomous Driving
+## Current Direction
 
-At UC Irvine, I studied KAN and physics-informed learning from PilotNet steering regression to Fast-BEV 3D detection. A key lesson came from failure: more physically reasonable auxiliary constraints did not automatically improve a more complex detection model. This strengthened my interest in hypothesis-driven experimentation and failure analysis.
+This project shaped my broader interest in **3D perception and spatial intelligence**: combining learned priors, explicit geometry, sensor observations, and uncertainty to build 3D representations that are reliable and useful for real-world reasoning and action.
 
-### Next — Reliable Spatial Intelligence
-
-My current interest is in combining learned priors, explicit geometry, sensor observations, and uncertainty to build more reliable 3D understanding.
-
-## Current Questions
-
-1. How can learned priors recover missing 3D structure without producing geometrically unsupported hallucinations?
-2. How can we distinguish between visually plausible and geometrically reliable 3D predictions?
-3. How can semantic priors from foundation models be combined with explicit geometry, topology, depth, and point-cloud observations?
-4. When multiple 3D structures are plausible, can a model explicitly represent its uncertainty rather than producing one overconfident answer?
-5. Can perception uncertainty guide active observation and downstream robotic action?
-
-## Future Direction
-
-My long-term interest is not simply to improve the accuracy of an isolated visual model.
-
-I hope to study how intelligent systems can build 3D representations that are reliable, verifiable, and useful for real-world reasoning and action.
-
-A direction I am particularly interested in is:
-
-> Perception → Spatial Understanding → Uncertainty → Active Observation → Action
-
-This direction may connect with robotics, autonomous systems, embodied intelligence, 3D vision, geometric intelligence, or intelligent CAD. My central research identity remains **3D Perception and Spatial Intelligence**.
+<p class="mt-4"><a href="{{ '/projects/sparse-train-reconstruction/' | relative_url }}">Read the full project case study →</a></p>
