@@ -33,7 +33,7 @@ The core question became:
     <p class="mb-0">The method explicitly represents empty regions as <strong>hole points</strong>. Rather than asking where a boundary lies among already observed points, it asks where points should exist but do not, and what observed geometry surrounds that empty region.</p>
   </div>
   <div class="col-12 col-md-6 text-center">
-    <img class="img-fluid rounded d-block mx-auto" src="{{ '/assets/img/train-reconstruction/reconstruction-pipeline.svg' | relative_url }}" alt="Sparse point cloud reconstruction pipeline">
+    <img class="img-fluid rounded d-block mx-auto" src="{{ '/assets/img/train-reconstruction/reconstruction-pipeline.png' | relative_url }}" alt="Sparse point cloud reconstruction pipeline">
   </div>
 </div>
 
