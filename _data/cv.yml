@@ -28,9 +28,8 @@ cv:
         start_date: 2026-06
         end_date: 2026-08
 
-      - institution: St Catharine's College, Cambridge
-        location: Cambridge, United Kingdom
-        area: Interdisciplinary Winter School — Computer Science, Data Science, and Artificial Intelligence Track
+      - institution: St Catharine's College, Cambridge, United Kingdom
+        area: Computer Science, Data Science, and Artificial Intelligence Track
         studyType: Winter School
         start_date: 2025-02
         end_date: 2025-02
