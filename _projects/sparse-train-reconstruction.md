@@ -10,7 +10,7 @@ permalink: /projects/sparse-train-reconstruction/
 This project investigated 3D reconstruction of streamlined high-speed train head geometry from sparse LiDAR observations. A portable sensing system combining LiDAR, cameras, and an IMU was used for data acquisition, with FAST-LIVO2 serving as the multi-sensor SLAM backbone. The objective was not simply to obtain a point cloud, but to recover a sufficiently continuous geometric representation for subsequent surface reconstruction.
 
 <div class="row row-cols-1 row-cols-md-2 g-4 my-4">
-  <div class="col"><figure class="mb-0 border rounded p-2 h-100"><img class="img-fluid rounded" src="{{ '/assets/img/train-reconstruction/01_train_head_photo.png' | relative_url }}" alt="Physical high-speed train head"><figcaption class="text-muted small mt-2">Physical high-speed train head.</figcaption></figure></div>
+  <div class="col"><figure class="mb-0 border rounded p-2 h-100"><div class="d-flex align-items-center" style="aspect-ratio: 832 / 357"><img class="img-fluid rounded" style="width: 100%; height: 100%; object-fit: contain" src="{{ '/assets/img/train-reconstruction/01_train_head_photo.png' | relative_url }}" alt="Physical high-speed train head"></div><figcaption class="text-muted small mt-2">Physical high-speed train head.</figcaption></figure></div>
   <div class="col"><figure class="mb-0 border rounded p-2 h-100"><img class="img-fluid rounded" src="{{ '/assets/img/train-reconstruction/02_sparse_lidar_scan.png' | relative_url }}" alt="Sparse LiDAR scan of the high-speed train head"><figcaption class="text-muted small mt-2">Sparse LiDAR reconstruction; missing returns are especially visible around glass-window regions.</figcaption></figure></div>
 </div>
 
@@ -27,12 +27,13 @@ The core question became:
 
 ## Reframing the Task as Missing-Region Reasoning
 
-Instead of searching only for boundaries among observed 3D points, I changed the representation of the problem. The point cloud was projected onto three orthogonal planes, where a missing surface that was difficult to identify directly in 3D could become more visible from one projected view.
-
-The method explicitly represented empty regions as **hole points**. Rather than asking where a boundary lies among the points already observed, it asks where points should exist but do not, and what observed geometry surrounds that empty region.
-
-```text
-Sparse 3D point cloud
+<div class="row align-items-center g-4 my-4">
+  <div class="col-12 col-md-6">
+    <p>Instead of searching only for boundaries among observed 3D points, the method changes the representation of the problem. The point cloud is projected onto three orthogonal planes, where a missing surface that is difficult to identify directly in 3D can become more visible from one projected view.</p>
+    <p class="mb-0">The method explicitly represents empty regions as <strong>hole points</strong>. Rather than asking where a boundary lies among already observed points, it asks where points should exist but do not, and what observed geometry surrounds that empty region.</p>
+  </div>
+  <div class="col-12 col-md-6 text-center">
+    <pre class="border rounded p-3 text-start d-inline-block mb-0"><code>Sparse 3D point cloud
   ↓
 Tri-axial orthogonal projection
   ↓
@@ -50,11 +51,12 @@ Fusion across three projections
   ↓
 Completed point cloud
   ↓
-Surface reconstruction
-```
+Surface reconstruction</code></pre>
+  </div>
+</div>
 
 <figure class="my-4 border rounded p-2">
-  <img class="img-fluid rounded" src="{{ '/assets/img/train-reconstruction/03_triaxial_projection.png' | relative_url }}" alt="Tri-axial projection of the train point cloud">
+  <img class="img-fluid rounded w-50 d-block mx-auto" src="{{ '/assets/img/train-reconstruction/03_triaxial_projection.png' | relative_url }}" alt="Tri-axial projection of the train point cloud">
   <figcaption class="text-muted small mt-2">Tri-axial projection. Complementary orthogonal views expose missing regions that are difficult to identify directly in the original 3D point cloud.</figcaption>
 </figure>
 
@@ -62,17 +64,17 @@ Surface reconstruction
 
 A conventional boundary detector starts from existing observations and attempts to identify where an observed surface ends. That assumption becomes fragile when observations are extremely sparse.
 
-My approach reverses this reasoning:
+The proposed approach reverses this reasoning:
 
 > **empty region → hole cluster → hole boundary → observed boundary support**
 
-After projection and spatial subdivision, regions without sufficient observations are explicitly represented as hole points. These points are clustered into individual missing regions. The boundary of each missing region is then used to search back into the original point cloud for surrounding geometric support. This made it possible to reason about missing surfaces even when almost no LiDAR points existed inside them.
+After projection and spatial subdivision, regions without sufficient observations are explicitly represented as hole points. These points are clustered into individual missing regions. The boundary of each missing region is then used to search back into the original point cloud for surrounding geometric support. This formulation enables reasoning about missing surfaces even when almost no LiDAR points exist inside them.
 
 ## Multi-Directional Completion
 
 Once the surrounding boundary support was identified, missing geometry was estimated with distance-weighted interpolation from multiple directions. Using observations from at least six directions reduced dependence on any single sparse neighbourhood and helped the reconstructed region transition smoothly into the surrounding train surface. Results from the three orthogonal projections were fused back into the original 3D coordinate system to form the completed point cloud.
 
-### My Contribution
+### Project Contributions
 
 - Designed and implemented the tri-axial projection strategy for exposing missing regions from complementary views.
 - Designed explicit hole-point representation and reverse hole-boundary reasoning.
@@ -107,11 +109,3 @@ After point-cloud completion, three classical reconstruction methods were evalua
 </div>
 
 <p class="text-muted small">Surface reconstruction comparison. Greedy Triangulation preserved the reconstructed train-head geometry more faithfully in the project experiments than Poisson Reconstruction and Marching Cubes.</p>
-
-## Research Report and Reflection
-
-_Sparse Point Cloud-Based 3D Reconstruction of High-Speed Train Head Geometry_ — Technical Research Report.
-
-> The most important lesson from this project was that changing the representation of a problem can be as important as changing the algorithm used to solve it. Reframing the task from detecting boundaries among existing points to explicitly reasoning about missing regions made the problem substantially more tractable.
-
-This project was my first experience of turning an initially intuitive idea into a complete pipeline, experimental comparison, and technical report.
