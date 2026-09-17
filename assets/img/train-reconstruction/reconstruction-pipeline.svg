@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1260" role="img" aria-labelledby="title description">
+  <title id="title">Sparse point cloud reconstruction pipeline</title>
+  <desc id="description">A vertical workflow from sparse point cloud through tri-axial projection, hole-point generation, interpolation, and fusion to a completed point cloud.</desc>
+  <rect width="1200" height="1260" rx="24" fill="#ffffff"/>
+  <g fill="#111111" font-family="Menlo, Consolas, monospace" text-anchor="middle">
+    <text x="600" y="90" font-size="42">Sparse 3D point cloud</text>
+    <text x="600" y="160" font-size="42">↓</text>
+    <text x="600" y="230" font-size="42">Tri-axial orthogonal projection</text>
+    <text x="600" y="300" font-size="42">↓</text>
+    <text x="600" y="370" font-size="42">2D spatial subdivision</text>
+    <text x="600" y="440" font-size="42">↓</text>
+    <text x="600" y="510" font-size="42">Hole-point generation</text>
+    <text x="600" y="580" font-size="42">↓</text>
+    <text x="600" y="650" font-size="42">Missing-region clustering</text>
+    <text x="600" y="720" font-size="42">↓</text>
+    <text x="600" y="790" font-size="40">Reverse hole-boundary extraction</text>
+    <text x="600" y="860" font-size="42">↓</text>
+    <text x="600" y="930" font-size="30">Multi-directional distance-weighted interpolation</text>
+    <text x="600" y="1000" font-size="42">↓</text>
+    <text x="600" y="1070" font-size="38">Fusion across three projections</text>
+    <text x="600" y="1140" font-size="42">↓</text>
+    <text x="600" y="1210" font-size="42">Completed point cloud</text>
+  </g>
+</svg>

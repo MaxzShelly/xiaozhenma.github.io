@@ -33,25 +33,7 @@ The core question became:
     <p class="mb-0">The method explicitly represents empty regions as <strong>hole points</strong>. Rather than asking where a boundary lies among already observed points, it asks where points should exist but do not, and what observed geometry surrounds that empty region.</p>
   </div>
   <div class="col-12 col-md-6 text-center">
-    <pre class="border rounded p-3 text-start d-inline-block mb-0"><code>Sparse 3D point cloud
-  ↓
-Tri-axial orthogonal projection
-  ↓
-2D spatial subdivision
-  ↓
-Hole-point generation
-  ↓
-Missing-region clustering
-  ↓
-Reverse hole-boundary extraction
-  ↓
-Multi-directional distance-weighted interpolation
-  ↓
-Fusion across three projections
-  ↓
-Completed point cloud
-  ↓
-Surface reconstruction</code></pre>
+    <img class="img-fluid rounded d-block mx-auto" src="{{ '/assets/img/train-reconstruction/reconstruction-pipeline.svg' | relative_url }}" alt="Sparse point cloud reconstruction pipeline">
   </div>
 </div>
 
