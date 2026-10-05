@@ -10,6 +10,70 @@ horizontal: false
 ---
 
 <!-- pages/projects.md -->
+<style>
+  #research-project-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 3rem;
+  }
+
+  #research-project-grid .research-project-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 25rem;
+    padding: 2rem 1.25rem;
+    background: var(--global-card-bg-color);
+    color: var(--global-text-color);
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.375rem;
+    text-decoration: none;
+  }
+
+  #research-project-grid .research-project-title {
+    margin: 0 0 1.5rem;
+    font-size: 1.375rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--global-theme-color);
+  }
+
+  #research-project-grid .research-project-subtitle {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.65;
+    overflow-wrap: break-word;
+  }
+
+  #research-project-grid .research-project-card:focus-visible {
+    outline: 2px solid var(--global-theme-color);
+    outline-offset: 4px;
+  }
+
+  @media (max-width: 991.98px) {
+    #research-project-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #research-project-grid .research-project-card {
+      min-height: 22rem;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    #research-project-grid {
+      grid-template-columns: 1fr;
+    }
+
+    #research-project-grid .research-project-card {
+      min-height: 0;
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>
+
 <div class="projects">
 {% if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->
@@ -20,7 +84,27 @@ horizontal: false
   {% assign categorized_projects = site.projects | where: "category", category %}
   {% assign sorted_projects = categorized_projects | sort: "importance" %}
   <!-- Generate cards for each project -->
-  {% if page.horizontal %}
+  {% if category == "Research" %}
+  <div id="research-project-grid">
+    {% for project in sorted_projects %}
+      {% assign card_title = project.title %}
+      {% case project.permalink %}
+        {% when '/projects/sparse-train-reconstruction/' %}
+          {% assign card_title = 'TrainRecon' %}
+        {% when '/projects/monocular-depth-railway/' %}
+          {% assign card_title = 'SceneRecon' %}
+        {% when '/projects/intelligent-cad/' %}
+          {% assign card_title = 'Intelligent CAD' %}
+        {% when '/projects/pikan-drive/' %}
+          {% assign card_title = 'PIKAN-Drive' %}
+      {% endcase %}
+      <a class="research-project-card card hoverable" href="{{ project.url | relative_url }}">
+        <h3 class="research-project-title">{{ card_title | escape }}</h3>
+        <p class="research-project-subtitle">{{ project.paper_title | default: project.title | escape }}</p>
+      </a>
+    {% endfor %}
+  </div>
+  {% elsif page.horizontal %}
   <div class="container">
     <div class="row row-cols-1 row-cols-md-2">
     {% for project in sorted_projects %}
