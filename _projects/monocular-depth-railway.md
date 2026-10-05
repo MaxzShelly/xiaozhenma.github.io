@@ -23,14 +23,14 @@ permalink: /projects/monocular-depth-railway/
 
 <p>SAM 3 masks define the regions for depth correction. Within each object, a piecewise moving least squares (MLS) model fits the residuals between LiDAR measurements and monocular depth predictions. Back-projecting valid pixels with the corrected depth produces a colored 3D point cloud constrained by measured geometry and object boundaries.</p>
 
-<p>Class-aware radius filtering organizes observations across frames, while frame-based visualization supports scene browsing and asset extraction. Results from urban mapping and railway bridge reconstruction show the transition from sparse observations to locally continuous surface representations and demonstrate the extraction of track regions and crossbeams.</p>
+<p>Depth-consistency screening and class-aware radius filtering organize observations across frames, while frame-based visualization supports scene browsing and asset extraction. Results from urban mapping and railway bridge reconstruction show the transition from sparse observations to locally continuous surface representations and demonstrate the extraction of track regions and crossbeams.</p>
 
 </section>
 
 <section aria-labelledby="railway-overview" style="margin-top: 3.5rem">
 <h2 id="railway-overview" style="font-size: 1.5rem; margin-bottom: 1.25rem">Overview</h2>
 
-<p>The method uses LiDAR measurements to constrain image-based depth estimates in a common metric coordinate system while restricting correction to individual objects. Keyframe frusta select co-visible observations from multiple frames. Object masks define the regions for local residual fitting, and LiDAR anchors guide depth correction within these regions. Distance-dependent class-aware filtering and frame-based organization connect reconstruction with scene browsing and asset extraction.</p>
+<p>The method uses LiDAR measurements to constrain image-based depth estimates in a common metric coordinate system while restricting correction to individual objects. Keyframe frusta select co-visible observations from multiple frames. Object masks define the regions for local residual fitting, and LiDAR anchors guide depth correction within these regions. Consistency screening, distance-dependent class-aware filtering, and frame-based organization connect reconstruction with scene browsing and asset extraction.</p>
 
 <p>The pipeline operates offline on scenes dominated by static transportation infrastructure. Co-visible observations can precede or follow the keyframe. Measured geometry, depth priors, and object boundaries jointly guide the conversion of sparse observations into pixel-level 3D samples within valid object regions.</p>
 
@@ -43,7 +43,11 @@ permalink: /projects/monocular-depth-railway/
 
 <h3 style="font-size: 1.25rem; margin-top: 2rem; margin-bottom: 1rem">Main Contributions</h3>
 
-<p>The method establishes geometric correspondences between co-visible point clouds and keyframe pixels to support object-level depth correction. It combines object boundaries with piecewise MLS residual fitting to generate pixel-level 3D samples from sparse metric anchors and monocular depth. Distance-dependent class-aware filtering and frame-based organization support object association across frames, scene visualization, and transportation asset extraction.</p>
+<ul>
+  <li>The method establishes geometric correspondences between co-visible point clouds and keyframe pixels to support object-level depth correction.</li>
+  <li>It combines object boundaries with piecewise MLS residual fitting to generate pixel-level 3D samples from sparse metric anchors and monocular depth.</li>
+  <li>Distance-dependent class-aware filtering and frame-based organization support object association across frames, scene visualization, and transportation asset extraction.</li>
+</ul>
 
 </section>
 
