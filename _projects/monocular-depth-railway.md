@@ -55,9 +55,9 @@ permalink: /projects/monocular-depth-railway/
 <h2 id="railway-results" style="font-size: 1.5rem; margin-bottom: 1.75rem">Results</h2>
 
 <section aria-labelledby="railway-mapping" markdown="1">
-<h3 id="railway-mapping" style="font-size: 1.25rem; margin-bottom: 1rem">基础建图与多帧几何支撑</h3>
+<h3 id="railway-mapping" style="font-size: 1.25rem; margin-bottom: 1rem">基础场景重建与多帧聚合</h3>
 
-FAST-LIVO2 为街区与铁路桥梁建立统一几何参考，呈现建筑体量、桥梁框架与轨道走向。在关键帧视锥和对象掩膜限定下，多帧观测被组织为目标区域的候选支撑；其作用是补充可用观测来源，而非保证筛选后的点云在各处都更密。
+街区与铁路桥梁的基础点云呈现了建筑立面、道路周边结构、桥梁立柱、横梁及轨道的空间布局。通过关键帧视锥聚合多帧观测，并结合对象边界筛选，提取出桥梁主体点云，为后续对象内部的深度校正与表面重建提供测量支撑。
 
 <figure id="railway-figure-2" style="margin: 1.75rem 0 0">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.5rem; align-items: start">
@@ -74,7 +74,7 @@ FAST-LIVO2 为街区与铁路桥梁建立统一几何参考，呈现建筑体量
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">（b）铁路桥梁场景</p>
   </div>
   </div>
-  <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6"><strong>Figure 2.</strong> 两类真实场景的基础地图。视角、采集范围与显示尺度不同。</figcaption>
+  <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6"><strong>Figure 2.</strong> FAST-LIVO2 建立的街区与铁路桥梁基础点云。</figcaption>
 </figure>
 
 <figure id="railway-figure-3" style="margin: 1.75rem 0 0">
@@ -92,7 +92,7 @@ FAST-LIVO2 为街区与铁路桥梁建立统一几何参考，呈现建筑体量
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">（b）视锥与对象边界内的候选点云</p>
   </div>
   </div>
-  <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6"><strong>Figure 3.</strong> 从单帧观测到对象区域候选支撑。两图展示不同处理阶段，不构成同视角的密度统计。</figcaption>
+  <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6"><strong>Figure 3.</strong> 单帧稀疏点云与多帧聚合、对象边界筛选后的桥梁点云。</figcaption>
 </figure>
 
 </section>
@@ -100,7 +100,7 @@ FAST-LIVO2 为街区与铁路桥梁建立统一几何参考，呈现建筑体量
 <section aria-labelledby="railway-fusion" style="margin-top: 3.5rem" markdown="1">
 <h3 id="railway-fusion" style="font-size: 1.25rem; margin-bottom: 1rem">对象边界约束下的深度融合与重建</h3>
 
-单目深度提供局部表面先验，SAM 3 掩膜限定对象内部的拟合范围，LiDAR 锚点则约束深度尺度与局部偏差。融合结果呈现桥梁主体、地面及邻近结构，横梁和立柱形成较连续的表面表达；植被与部分遮挡区域仍存在离散点或缺失。
+融合单目深度、LiDAR 测量与 SAM 3 对象边界后，桥梁立柱和顶部横梁呈现出较连续的表面形态，轨道与桥梁主体的相对位置清晰可辨。对象内部的分片残差校正与像素反投影，将稀疏测量扩展为带有图像颜色的三维表面采样，展示了从图像输入到对象约束重建的完整过程。
 
 <figure id="railway-figure-4" style="margin: 1.75rem 0 0">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.5rem; align-items: start">
@@ -129,7 +129,7 @@ FAST-LIVO2 为街区与铁路桥梁建立统一几何参考，呈现建筑体量
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">（d）深度与 LiDAR 几何融合</p>
   </div>
   </div>
-  <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6"><strong>Figure 4.</strong> 图像先验、对象边界与测量约束的融合示例。深度图未附数值色标，其颜色仅用于显示预测结构。</figcaption>
+  <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6"><strong>Figure 4.</strong> RGB 图像、单目深度、对象分割与融合后的三维点云。</figcaption>
 </figure>
 
 <figure id="railway-figure-5" style="margin: 1.75rem 0 0">
@@ -138,7 +138,7 @@ FAST-LIVO2 为街区与铁路桥梁建立统一几何参考，呈现建筑体量
       <img class="img-fluid rounded border d-block mx-auto" style="width: 100%; height: auto; background: white" src="{{ '/assets/img/railway-reconstruction/results/boundary-reconstruction.png' | relative_url }}" width="824" height="364" loading="lazy" alt="对象边界约束下重建的桥梁立柱、横梁、轨道及周围植被">
     </a>
   </div>
-  <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6"><strong>Figure 5.</strong> 对象边界限定下的插值与重建结果。局部拟合改善了主体表面表达，但不能替代缺失观测。</figcaption>
+  <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6"><strong>Figure 5.</strong> 对象约束重建结果，展示桥梁立柱、横梁及轨道区域的三维表面形态。</figcaption>
 </figure>
 
 </section>
@@ -146,7 +146,7 @@ FAST-LIVO2 为街区与铁路桥梁建立统一几何参考，呈现建筑体量
 <section aria-labelledby="railway-views" style="margin-top: 3.5rem" markdown="1">
 <h3 id="railway-views" style="font-size: 1.25rem; margin-bottom: 1rem">多视角场景展示</h3>
 
-从前向俯视与侧向观察，可检查桥梁框架、轨道和周边植被的相对位置。不同视角同时揭示局部离散与侧面覆盖不足，表面连续性仍受采集视角和有效观测范围影响。
+重建场景支持从不同方向浏览桥梁与周边环境。前向俯视展示轨道沿桥梁延伸的走向及横梁的排列，侧向视角呈现立柱、横梁与地面的空间关系，使交通设施的整体布局和构件形态直观可见。
 
 <figure id="railway-figure-6" style="margin: 1.75rem 0 0">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.5rem; align-items: start">
@@ -163,7 +163,7 @@ FAST-LIVO2 为街区与铁路桥梁建立统一几何参考，呈现建筑体量
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">（b）侧向观察</p>
   </div>
   </div>
-  <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6"><strong>Figure 6.</strong> 同一重建场景的两个观察视角，用于检查主体结构与周边环境的空间关系。</figcaption>
+  <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6"><strong>Figure 6.</strong> 铁路桥梁重建结果的前向俯视与侧向展示。</figcaption>
 </figure>
 
 </section>
@@ -171,7 +171,7 @@ FAST-LIVO2 为街区与铁路桥梁建立统一几何参考，呈现建筑体量
 <section aria-labelledby="railway-assets" style="margin-top: 3.5rem" markdown="1">
 <h3 id="railway-assets" style="font-size: 1.25rem; margin-bottom: 1rem">交通资产点云提取</h3>
 
-通过类别选择，轨道区域和横梁可从整体场景中单独显示，为设施浏览与局部覆盖检查提供入口。此处展示的是类别级提取，不代表已为每个构件建立稳定的跨帧实例编号。
+轨道区域与横梁点云可按类别从完整场景中提取并独立显示。提取后的轨道保留了沿线路延伸的形态，横梁以分离的构件集合呈现，实现了从整体场景浏览到交通资产检索与展示的转换。
 
 <figure id="railway-figure-7" style="margin: 1.75rem 0 0">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.5rem; align-items: start">
@@ -188,7 +188,7 @@ FAST-LIVO2 为街区与铁路桥梁建立统一几何参考，呈现建筑体量
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">（b）横梁提取</p>
   </div>
   </div>
-  <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6"><strong>Figure 7.</strong> 轨道与横梁的类别级提取。界面中的数值属于当前显示状态，不作为评价统计。</figcaption>
+  <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6"><strong>Figure 7.</strong> 从重建场景中独立提取的轨道区域与横梁点云。</figcaption>
 </figure>
 
 </section>
@@ -196,7 +196,7 @@ FAST-LIVO2 为街区与铁路桥梁建立统一几何参考，呈现建筑体量
 <section aria-labelledby="railway-frames" style="margin-top: 3.5rem" markdown="1">
 <h3 id="railway-frames" style="font-size: 1.25rem; margin-bottom: 1rem">按帧浏览与观测追溯</h3>
 
-按来源帧选择局部点云，使散点、表面断裂和颜色变化能够与具体观测重新关联。按帧浏览与类别选择互补：前者定位观测来源，后者检索对象类别，便于检查大场景中的局部覆盖及叠加关系。
+点云浏览界面支持按来源帧选择和组合显示局部场景，保留三维点云与采集观测之间的关联。结合类别选择，可在整体场景、局部帧和交通构件之间切换，查看不同观测位置下的桥梁结构及多帧叠加效果。
 
 <figure id="railway-figure-8" style="margin: 1.75rem 0 0">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.5rem; align-items: start">
@@ -213,12 +213,10 @@ FAST-LIVO2 为街区与铁路桥梁建立统一几何参考，呈现建筑体量
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">（b）帧选择状态二</p>
   </div>
   </div>
-  <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6"><strong>Figure 8.</strong> 不同来源帧选择状态下的点云显示，用于局部观测检查与结果追溯。</figcaption>
+  <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6"><strong>Figure 8.</strong> 按来源帧选择与组合显示的局部桥梁点云。</figcaption>
 </figure>
 
 </section>
-
-<p class="text-muted small" style="margin-top: 2rem; line-height: 1.6"><strong>结果范围：</strong>以上为离线真实场景的定性展示。像素级描述采样粒度，不等同于绝对几何精度；当前结果不支持厘米级或毫米级精度、实时处理或普遍优于其他方法的结论。</p>
 
 </section>
 
