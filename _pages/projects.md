@@ -78,9 +78,9 @@ horizontal: false
       {% assign card_title = project.title %}
       {% case project.permalink %}
         {% when '/projects/sparse-train-reconstruction/' %}
-          {% assign card_title = 'TrainRecon' %}
+          {% assign card_title = 'Point Cloud Completion and Surface Reconstruction' %}
         {% when '/projects/monocular-depth-railway/' %}
-          {% assign card_title = 'SceneRecon' %}
+          {% assign card_title = 'Pixel-Level 3D Reconstruction and Object Extraction' %}
         {% when '/projects/intelligent-cad/' %}
           {% assign card_title = 'Intelligent CAD' %}
         {% when '/projects/pikan-drive/' %}
