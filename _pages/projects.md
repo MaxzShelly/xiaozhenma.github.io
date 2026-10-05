@@ -34,9 +34,11 @@ horizontal: false
 
   #research-project-grid .research-project-title {
     margin: 0 0 0.75rem;
-    font-size: 1.375rem;
-    font-weight: 500;
-    line-height: 1.3;
+    color: var(--global-text-color);
+  }
+
+  #research-project-grid .research-project-card:hover .research-project-title,
+  #research-project-grid .research-project-card:focus-visible .research-project-title {
     color: var(--global-theme-color);
   }
 
@@ -85,7 +87,7 @@ horizontal: false
           {% assign card_title = 'PIKAN-Drive' %}
       {% endcase %}
       <a class="research-project-card card hoverable" href="{{ project.url | relative_url }}">
-        <h3 class="research-project-title">{{ card_title | escape }}</h3>
+        <h2 class="card-title research-project-title">{{ card_title | escape }}</h2>
         <p class="research-project-subtitle">{{ project.paper_title | default: project.title | escape }}</p>
       </a>
     {% endfor %}
