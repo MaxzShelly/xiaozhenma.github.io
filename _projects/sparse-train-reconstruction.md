@@ -12,6 +12,11 @@ permalink: /projects/sparse-train-reconstruction/
 
 <header class="post-header" style="margin-bottom: 2.75rem">
   <h1 class="post-title" style="font-size: clamp(1.5rem, 2.4vw, 2rem); line-height: 1.4; margin: 0">{{ page.paper_title }}</h1>
+  <div class="project-metadata" style="margin-top: 1.5rem; font-size: 1rem; font-weight: 300; line-height: 1.75">
+    <p style="margin: 0">Xiaozhen Ma · University of California, Irvine</p>
+    <p class="text-muted small" style="margin: 0.25rem 0 0">UCInspire 2026 · July–September 2026</p>
+    <p class="text-muted small" style="margin: 0.25rem 0 0">Faculty Mentor: Prof. Fadi Kurdahi</p>
+  </div>
 </header>
 
 <article style="line-height: 1.75" markdown="1">
@@ -110,7 +115,6 @@ Using the completed cloud, greedy projection triangulation follows the train-nos
 </figure>
 
 </section>
-
 
 </section>
 
