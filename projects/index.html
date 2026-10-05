@@ -7,7 +7,8 @@
   </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/xiaozhenma.github.io/"> Xiaozhen Ma | 3D Perception &amp; Spatial Intelligence </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/xiaozhenma.github.io/">About </a> </li> <li class="nav-item active"> <a class="nav-link" href="/xiaozhenma.github.io/">About <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/xiaozhenma.github.io/research/">Research </a> </li> <li class="nav-item active"> <a class="nav-link" href="/xiaozhenma.github.io/projects/">Projects <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/xiaozhenma.github.io/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Projects</h1> <p class="post-description">Research and engineering projects in perception, geometry, and intelligent systems.</p> </header> <article> <style>
   #research-project-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: 1fr;
     gap: 1.25rem;
     margin-bottom: 3rem;
   }
@@ -16,8 +17,8 @@
     display: flex;
     flex-direction: column;
     min-width: 0;
-    min-height: 25rem;
-    padding: 2rem 1.25rem;
+    min-height: 10rem;
+    padding: 1.75rem 2rem;
     background: var(--global-card-bg-color);
     color: var(--global-text-color);
     border: 1px solid var(--global-divider-color);
@@ -26,7 +27,7 @@
   }
 
   #research-project-grid .research-project-title {
-    margin: 0 0 1.5rem;
+    margin: 0 0 0.75rem;
     font-size: 1.375rem;
     font-weight: 500;
     line-height: 1.3;
@@ -46,24 +47,9 @@
     outline-offset: 4px;
   }
 
-  @media (max-width: 991.98px) {
-    #research-project-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    #research-project-grid .research-project-card {
-      min-height: 22rem;
-    }
-  }
-
   @media (max-width: 575.98px) {
-    #research-project-grid {
-      grid-template-columns: 1fr;
-    }
-
     #research-project-grid .research-project-card {
-      min-height: 0;
-      padding: 2rem 1.5rem;
+      padding: 1.5rem;
     }
   }
 </style> <div class="projects"> <a id="Research" href=".#Research"> <h2 class="category">Research</h2> </a> <div id="research-project-grid"> <a class="research-project-card card hoverable" href="/xiaozhenma.github.io/projects/sparse-train-reconstruction/"> <h3 class="research-project-title">TrainRecon</h3> <p class="research-project-subtitle">A Three-Dimensional Reverse-Projection Method for Sparse Point Cloud Completion and Its Application to High-Speed Train Nose Reconstruction</p> </a> <a class="research-project-card card hoverable" href="/xiaozhenma.github.io/projects/monocular-depth-railway/"> <h3 class="research-project-title">SceneRecon</h3> <p class="research-project-subtitle">Pixel-Level 3D Reconstruction and Physical Object Extraction from Sparse Point Clouds in Transportation Scenes</p> </a> <a class="research-project-card card hoverable" href="/xiaozhenma.github.io/projects/intelligent-cad/"> <h3 class="research-project-title">Intelligent CAD</h3> <p class="research-project-subtitle">Intelligent CAD: From Geometric Understanding to Editable Reconstruction</p> </a> <a class="research-project-card card hoverable" href="/xiaozhenma.github.io/projects/pikan-drive/"> <h3 class="research-project-title">PIKAN-Drive</h3> <p class="research-project-subtitle">PIKAN-Drive: KAN and Physics-Informed Learning for Autonomous Driving</p> </a> </div> <a id="Engineering" href=".#Engineering"> <h2 class="category">Engineering</h2> </a> <div class="row row-cols-1 row-cols-md-2"> <div class="col"> <a href="/xiaozhenma.github.io/projects/embedded-systems/"> <div class="card h-100 hoverable"> <div class="card-body"> <h2 class="card-title">Embedded Systems</h2> <p class="card-text">Sensors, microcontrollers, control logic, and physical system behaviour.</p> <div class="row ml-1 mr-1 p-0"> </div> </div> </div> </a> </div> <div class="col"> <a href="/xiaozhenma.github.io/projects/fpga-digital-systems/"> <div class="card h-100 hoverable"> <div class="card-body"> <h2 class="card-title">FPGA Digital System Design</h2> <p class="card-text">Hierarchical digital modules, simulation, and FPGA testing.</p> <div class="row ml-1 mr-1 p-0"> </div> </div> </div> </a> </div> <div class="col"> <a href="/xiaozhenma.github.io/projects/pcb-design/"> <div class="card h-100 hoverable"> <div class="card-body"> <h2 class="card-title">PCB Design</h2> <p class="card-text">From schematic and layout to measurement and debugging.</p> <div class="row ml-1 mr-1 p-0"> </div> </div> </div> </a> </div> </div> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Xiaozhen Ma. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script>
