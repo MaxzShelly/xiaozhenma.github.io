@@ -111,7 +111,6 @@ Using the completed cloud, greedy projection triangulation follows the train-nos
 
 </section>
 
-<p class="text-muted" style="margin-top: 2rem; margin-bottom: 2rem"><strong>Scope and limitations.</strong> Validation uses a scaled display model. Completion depends on observed boundaries, and some rear regions remain incomplete where boundary support is insufficient.</p>
 
 </section>
 
