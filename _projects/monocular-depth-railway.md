@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Monocular Depth-Driven 3D Railway Scene Reconstruction
+title: Pixel-Level 3D Reconstruction and Physical Object Extraction from Sparse Point Clouds in Transportation Scenes
 paper_title: Pixel-Level 3D Reconstruction and Physical Object Extraction from Sparse Point Clouds in Transportation Scenes
 description: Combining learned depth, LiDAR anchors, and semantic boundary constraints.
 importance: 2
@@ -23,29 +23,27 @@ permalink: /projects/monocular-depth-railway/
 
 <p>SAM 3 masks define the regions for depth correction. Within each object, a piecewise moving least squares (MLS) model fits the residuals between LiDAR measurements and monocular depth predictions. Back-projecting valid pixels with the corrected depth produces a colored 3D point cloud constrained by measured geometry and object boundaries.</p>
 
-<p>Depth-consistency screening and class-aware radius filtering organize observations across frames, while frame-based visualization supports scene browsing and asset extraction. Results from urban mapping and railway bridge reconstruction show the transition from sparse observations to locally continuous surface representations and demonstrate the extraction of track regions and crossbeams.</p>
+<p>Class-aware radius filtering organizes observations across frames, while frame-based visualization supports scene browsing and asset extraction. Results from urban mapping and railway bridge reconstruction show the transition from sparse observations to locally continuous surface representations and demonstrate the extraction of track regions and crossbeams.</p>
 
 </section>
 
 <section aria-labelledby="railway-overview" style="margin-top: 3.5rem">
 <h2 id="railway-overview" style="font-size: 1.5rem; margin-bottom: 1.25rem">Overview</h2>
 
-<p>The method uses LiDAR measurements to constrain image-based depth estimates in a common metric coordinate system while restricting correction to individual objects. Keyframe frusta select co-visible observations from multiple frames. Object masks define the regions for local residual fitting, and LiDAR anchors guide depth correction within these regions. Consistency screening, distance-dependent class-aware filtering, and frame-based organization connect reconstruction with scene browsing and asset extraction.</p>
+<p>The method uses LiDAR measurements to constrain image-based depth estimates in a common metric coordinate system while restricting correction to individual objects. Keyframe frusta select co-visible observations from multiple frames. Object masks define the regions for local residual fitting, and LiDAR anchors guide depth correction within these regions. Distance-dependent class-aware filtering and frame-based organization connect reconstruction with scene browsing and asset extraction.</p>
 
 <p>The pipeline operates offline on scenes dominated by static transportation infrastructure. Co-visible observations can precede or follow the keyframe. Measured geometry, depth priors, and object boundaries jointly guide the conversion of sparse observations into pixel-level 3D samples within valid object regions.</p>
 
 <figure id="railway-figure-1" style="margin: 1.75rem 0 0">
-<div style="min-width: 0">
-    <a href="{{ '/assets/img/railway-reconstruction/results/pipeline.png' | relative_url }}" target="_blank" rel="noopener" aria-label="View original image: Reconstruction pipeline with multi-frame aggregation, object boundaries, depth-consistency screening, piecewise residual correction, and pixel back-projection">
-      <img class="img-fluid rounded border d-block mx-auto" style="width: 100%; height: auto; background: white" src="{{ '/assets/img/railway-reconstruction/results/pipeline.png' | relative_url }}" width="1442" height="642" loading="lazy" alt="Reconstruction pipeline with multi-frame aggregation, object boundaries, depth-consistency screening, piecewise residual correction, and pixel back-projection">
-    </a>
+  <div class="rounded" style="position: relative; aspect-ratio: 1442 / 262; overflow: hidden; background: white">
+    <img class="d-block" style="width: 100%; height: auto" src="{{ '/assets/img/railway-reconstruction/results/pipeline.png' | relative_url }}" width="1442" height="642" loading="lazy" alt="Pipeline overview: FAST-LIVO2 mapping, multi-frame aggregation, object-constrained reconstruction, and pixel-level 3D output">
   </div>
-  <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6"><strong>Figure 1.</strong> The reconstruction pipeline and object-constrained depth refinement. LiDAR measurements anchor local depth correction, while object boundaries define the regions for fitting and back-projection. Select any image to view the original.</figcaption>
+  <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6"><strong>Figure 1.</strong> Overview of the reconstruction pipeline, from FAST-LIVO2 mapping and multi-frame aggregation to object-constrained reconstruction and pixel-level 3D output.</figcaption>
 </figure>
 
 <h3 style="font-size: 1.25rem; margin-top: 2rem; margin-bottom: 1rem">Main Contributions</h3>
 
-<p>The method establishes geometric correspondences between co-visible point clouds and keyframe pixels to support object-level depth correction. It combines object boundaries with piecewise MLS residual fitting to generate pixel-level 3D samples from sparse metric anchors and monocular depth. Depth-consistency screening, distance-dependent class-aware filtering, and frame-based organization support object association across frames, scene visualization, and transportation asset extraction.</p>
+<p>The method establishes geometric correspondences between co-visible point clouds and keyframe pixels to support object-level depth correction. It combines object boundaries with piecewise MLS residual fitting to generate pixel-level 3D samples from sparse metric anchors and monocular depth. Distance-dependent class-aware filtering and frame-based organization support object association across frames, scene visualization, and transportation asset extraction.</p>
 
 </section>
 
@@ -60,15 +58,15 @@ permalink: /projects/monocular-depth-railway/
 <figure id="railway-figure-2" style="margin: 1.75rem 0 0">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.5rem; align-items: start">
 <div style="min-width: 0">
-    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/urban-map.png' | relative_url }}" target="_blank" rel="noopener" aria-label="View original image: Urban point cloud from FAST-LIVO2 mapping">
+    <div class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate">
       <img class="d-block" style="position: absolute; max-width: none; width: 115.39352%; height: auto; left: -10.41667%; top: -4.81481%" src="{{ '/assets/img/railway-reconstruction/results/urban-map.png' | relative_url }}" width="997" height="568" loading="lazy" alt="Urban point cloud from FAST-LIVO2 mapping">
-    </a>
+    </div>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">(a) Urban scene</p>
   </div>
 <div style="min-width: 0">
-    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/railway-map.png' | relative_url }}" target="_blank" rel="noopener" aria-label="View original image: Railway bridge point cloud from FAST-LIVO2 mapping">
+    <div class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate">
       <img class="d-block" style="position: absolute; max-width: none; width: 115.39352%; height: auto; left: -7.52315%; top: -1.48148%" src="{{ '/assets/img/railway-reconstruction/results/railway-map.png' | relative_url }}" width="997" height="558" loading="lazy" alt="Railway bridge point cloud from FAST-LIVO2 mapping">
-    </a>
+    </div>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">(b) Railway bridge</p>
   </div>
   </div>
@@ -78,15 +76,15 @@ permalink: /projects/monocular-depth-railway/
 <figure id="railway-figure-3" style="margin: 1.75rem 0 0">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.5rem; align-items: start">
 <div style="min-width: 0">
-    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/single-frame.png' | relative_url }}" target="_blank" rel="noopener" aria-label="View original image: Sparse railway bridge point cloud from a single frame">
+    <div class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate">
       <img class="d-block" style="position: absolute; max-width: none; width: 122.5%; height: auto; left: -6.25%; top: -3.33333%" src="{{ '/assets/img/railway-reconstruction/results/single-frame.png' | relative_url }}" width="588" height="320" loading="lazy" alt="Sparse railway bridge point cloud from a single frame">
-    </a>
+    </div>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">(a) Single-frame sparse observations</p>
   </div>
 <div style="min-width: 0">
-    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/object-candidates.png' | relative_url }}" target="_blank" rel="noopener" aria-label="View original image: Bridge points selected by multi-frame aggregation, keyframe frustum projection, and object masks">
+    <div class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate">
       <img class="d-block" style="position: absolute; max-width: none; width: 103.01724%; height: auto; left: -0.64655%; top: -3.10345%" src="{{ '/assets/img/railway-reconstruction/results/object-candidates.png' | relative_url }}" width="478" height="309" loading="lazy" alt="Bridge points selected by multi-frame aggregation, keyframe frustum projection, and object masks">
-    </a>
+    </div>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">(b) Object-constrained multi-frame points</p>
   </div>
   </div>
@@ -103,27 +101,27 @@ permalink: /projects/monocular-depth-railway/
 <figure id="railway-figure-4" style="margin: 1.75rem 0 0">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.5rem; align-items: start">
 <div style="min-width: 0">
-    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/rgb.png' | relative_url }}" target="_blank" rel="noopener" aria-label="View original image: RGB image of the railway bridge">
+    <div class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate">
       <img class="d-block" style="position: absolute; max-width: none; width: 150.70755%; height: auto; left: -25.23585%; top: -0.37736%" src="{{ '/assets/img/railway-reconstruction/results/rgb.png' | relative_url }}" width="1278" height="537" loading="lazy" alt="RGB image of the railway bridge">
-    </a>
+    </div>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">(a) RGB image</p>
   </div>
 <div style="min-width: 0">
-    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/monocular-depth.png' | relative_url }}" target="_blank" rel="noopener" aria-label="View original image: Monocular depth visualization of the railway bridge">
+    <div class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate">
       <img class="d-block" style="position: absolute; max-width: none; width: 150.70755%; height: auto; left: -25.23585%; top: -0.37736%" src="{{ '/assets/img/railway-reconstruction/results/monocular-depth.png' | relative_url }}" width="1278" height="533" loading="lazy" alt="Monocular depth visualization of the railway bridge">
-    </a>
+    </div>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">(b) Monocular depth</p>
   </div>
 <div style="min-width: 0">
-    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/object-mask.png' | relative_url }}" target="_blank" rel="noopener" aria-label="View original image: Bridge segmentation mask overlaid on the RGB image">
+    <div class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate">
       <img class="d-block" style="position: absolute; max-width: none; width: 147.47596%; height: auto; left: -23.79808%; top: -2.69231%" src="{{ '/assets/img/railway-reconstruction/results/object-mask.png' | relative_url }}" width="1227" height="538" loading="lazy" alt="Bridge segmentation mask overlaid on the RGB image">
-    </a>
+    </div>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">(c) Object segmentation</p>
   </div>
 <div style="min-width: 0">
-    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/fused-cloud.png' | relative_url }}" target="_blank" rel="noopener" aria-label="View original image: Point cloud from the fusion of monocular depth and LiDAR measurements">
+    <div class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate">
       <img class="d-block" style="position: absolute; max-width: none; width: 148.64865%; height: auto; left: -22.80405%; top: -6.21622%" src="{{ '/assets/img/railway-reconstruction/results/fused-cloud.png' | relative_url }}" width="880" height="403" loading="lazy" alt="Point cloud from the fusion of monocular depth and LiDAR measurements">
-    </a>
+    </div>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">(d) Depth and LiDAR fusion</p>
   </div>
   </div>
@@ -132,9 +130,9 @@ permalink: /projects/monocular-depth-railway/
 
 <figure id="railway-figure-5" style="max-width: 40rem; margin: 1.75rem auto 0">
 <div style="min-width: 0">
-    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/boundary-reconstruction.png' | relative_url }}" target="_blank" rel="noopener" aria-label="View original image: Reconstructed bridge columns, crossbeams, track, and nearby vegetation">
+    <div class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate">
       <img class="d-block" style="position: absolute; max-width: none; width: 166.12903%; height: auto; left: -18.14516%; top: -16.12903%" src="{{ '/assets/img/railway-reconstruction/results/boundary-reconstruction.png' | relative_url }}" width="824" height="364" loading="lazy" alt="Reconstructed bridge columns, crossbeams, track, and nearby vegetation">
-    </a>
+    </div>
   </div>
   <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6"><strong>Figure 5.</strong> Object-constrained reconstruction of bridge columns, crossbeams, and the track region.</figcaption>
 </figure>
@@ -149,15 +147,15 @@ permalink: /projects/monocular-depth-railway/
 <figure id="railway-figure-6" style="margin: 1.75rem 0 0">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.5rem; align-items: start">
 <div style="min-width: 0">
-    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/front-view.png' | relative_url }}" target="_blank" rel="noopener" aria-label="View original image: Elevated front view of the reconstructed railway bridge">
+    <div class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate">
       <img class="d-block" style="position: absolute; max-width: none; width: 148.39286%; height: auto; left: -27.85714%; top: -29.14286%" src="{{ '/assets/img/railway-reconstruction/results/front-view.png' | relative_url }}" width="831" height="462" loading="lazy" alt="Elevated front view of the reconstructed railway bridge">
-    </a>
+    </div>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">(a) Elevated front view</p>
   </div>
 <div style="min-width: 0">
-    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/side-view.png' | relative_url }}" target="_blank" rel="noopener" aria-label="View original image: Side view of the reconstructed railway bridge">
+    <div class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate">
       <img class="d-block" style="position: absolute; max-width: none; width: 116.66667%; height: auto; left: -0.86806%; top: -31.11111%" src="{{ '/assets/img/railway-reconstruction/results/side-view.png' | relative_url }}" width="672" height="474" loading="lazy" alt="Side view of the reconstructed railway bridge">
-    </a>
+    </div>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">(b) Side view</p>
   </div>
   </div>
@@ -174,44 +172,19 @@ permalink: /projects/monocular-depth-railway/
 <figure id="railway-figure-7" style="margin: 1.75rem 0 0">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.5rem; align-items: start">
 <div style="min-width: 0">
-    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/rail-extraction.png' | relative_url }}" target="_blank" rel="noopener" aria-label="View original image: Track region extracted from the full scene">
+    <div class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate">
       <img class="d-block" style="position: absolute; max-width: none; width: 203.47222%; height: auto; left: -61.63194%; top: -23.05556%" src="{{ '/assets/img/railway-reconstruction/results/rail-extraction.png' | relative_url }}" width="1172" height="453" loading="lazy" alt="Track region extracted from the full scene">
-    </a>
+    </div>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">(a) Track extraction</p>
   </div>
 <div style="min-width: 0">
-    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/crossbeam-extraction.png' | relative_url }}" target="_blank" rel="noopener" aria-label="View original image: Crossbeams extracted by object class">
+    <div class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate">
       <img class="d-block" style="position: absolute; max-width: none; width: 333.52273%; height: auto; left: -166.76136%; top: -89.09091%" src="{{ '/assets/img/railway-reconstruction/results/crossbeam-extraction.png' | relative_url }}" width="1174" height="478" loading="lazy" alt="Crossbeams extracted by object class">
-    </a>
+    </div>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">(b) Crossbeam extraction</p>
   </div>
   </div>
   <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6"><strong>Figure 7.</strong> Track regions and crossbeams extracted from the reconstructed scene.</figcaption>
-</figure>
-
-</section>
-
-<section aria-labelledby="railway-frames" style="margin-top: 3.5rem">
-<h3 id="railway-frames" style="font-size: 1.25rem; margin-bottom: 1rem">Frame-Based Visualization and Traceability</h3>
-
-<p>The viewer supports the selection and combined display of point clouds by source frame, preserving their links to the original observations. Frame and class selection allow users to switch between the full scene, local observations, and structural components to inspect bridge geometry and the overlap between frames.</p>
-
-<figure id="railway-figure-8" style="margin: 1.75rem 0 0">
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.5rem; align-items: start">
-<div style="min-width: 0">
-    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/frame-selection-a.png' | relative_url }}" target="_blank" rel="noopener" aria-label="View original image: Local bridge point cloud with the first source-frame selection">
-      <img class="d-block" style="position: absolute; max-width: none; width: 188.92857%; height: auto; left: -72.32143%; top: -47.42857%" src="{{ '/assets/img/railway-reconstruction/results/frame-selection-a.png' | relative_url }}" width="1058" height="516" loading="lazy" alt="Local bridge point cloud with the first source-frame selection">
-    </a>
-    <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">(a) Source-frame selection 1</p>
-  </div>
-<div style="min-width: 0">
-    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/frame-selection-b.png' | relative_url }}" target="_blank" rel="noopener" aria-label="View original image: Local bridge point cloud with the second source-frame selection">
-      <img class="d-block" style="position: absolute; max-width: none; width: 210%; height: auto; left: -72.32143%; top: -34.57143%" src="{{ '/assets/img/railway-reconstruction/results/frame-selection-b.png' | relative_url }}" width="1176" height="471" loading="lazy" alt="Local bridge point cloud with the second source-frame selection">
-    </a>
-    <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">(b) Source-frame selection 2</p>
-  </div>
-  </div>
-  <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6"><strong>Figure 8.</strong> Local bridge point clouds displayed with different source-frame selections.</figcaption>
 </figure>
 
 </section>
