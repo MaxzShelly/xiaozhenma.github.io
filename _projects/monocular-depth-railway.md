@@ -62,14 +62,14 @@ permalink: /projects/monocular-depth-railway/
 <figure id="railway-figure-2" style="margin: 1.75rem 0 0">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.5rem; align-items: start">
 <div style="min-width: 0">
-    <a href="{{ '/assets/img/railway-reconstruction/results/urban-map.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：FAST-LIVO2 建立的街区基础点云">
-      <img class="img-fluid rounded border d-block mx-auto" style="width: 100%; height: auto; background: white" src="{{ '/assets/img/railway-reconstruction/results/urban-map.png' | relative_url }}" width="997" height="568" loading="lazy" alt="FAST-LIVO2 建立的街区基础点云">
+    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/urban-map.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：FAST-LIVO2 建立的街区基础点云">
+      <img class="d-block" style="position: absolute; max-width: none; width: 115.39352%; height: auto; left: -10.41667%; top: -4.81481%" src="{{ '/assets/img/railway-reconstruction/results/urban-map.png' | relative_url }}" width="997" height="568" loading="lazy" alt="FAST-LIVO2 建立的街区基础点云">
     </a>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">（a）街区场景</p>
   </div>
 <div style="min-width: 0">
-    <a href="{{ '/assets/img/railway-reconstruction/results/railway-map.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：FAST-LIVO2 建立的铁路桥梁基础点云">
-      <img class="img-fluid rounded border d-block mx-auto" style="width: 100%; height: auto; background: white" src="{{ '/assets/img/railway-reconstruction/results/railway-map.png' | relative_url }}" width="997" height="558" loading="lazy" alt="FAST-LIVO2 建立的铁路桥梁基础点云">
+    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/railway-map.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：FAST-LIVO2 建立的铁路桥梁基础点云">
+      <img class="d-block" style="position: absolute; max-width: none; width: 115.39352%; height: auto; left: -7.52315%; top: -1.48148%" src="{{ '/assets/img/railway-reconstruction/results/railway-map.png' | relative_url }}" width="997" height="558" loading="lazy" alt="FAST-LIVO2 建立的铁路桥梁基础点云">
     </a>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">（b）铁路桥梁场景</p>
   </div>
@@ -80,14 +80,14 @@ permalink: /projects/monocular-depth-railway/
 <figure id="railway-figure-3" style="margin: 1.75rem 0 0">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.5rem; align-items: start">
 <div style="min-width: 0">
-    <a href="{{ '/assets/img/railway-reconstruction/results/single-frame.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：单帧采样得到的稀疏铁路桥梁点云">
-      <img class="img-fluid rounded border d-block mx-auto" style="width: 100%; height: auto; background: white" src="{{ '/assets/img/railway-reconstruction/results/single-frame.png' | relative_url }}" width="588" height="320" loading="lazy" alt="单帧采样得到的稀疏铁路桥梁点云">
+    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/single-frame.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：单帧采样得到的稀疏铁路桥梁点云">
+      <img class="d-block" style="position: absolute; max-width: none; width: 122.5%; height: auto; left: -6.25%; top: -3.33333%" src="{{ '/assets/img/railway-reconstruction/results/single-frame.png' | relative_url }}" width="588" height="320" loading="lazy" alt="单帧采样得到的稀疏铁路桥梁点云">
     </a>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">（a）单帧稀疏采样</p>
   </div>
 <div style="min-width: 0">
-    <a href="{{ '/assets/img/railway-reconstruction/results/object-candidates.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：多帧聚合后经关键帧视锥与识别区域筛选的桥梁候选点云">
-      <img class="img-fluid rounded border d-block mx-auto" style="width: 100%; height: auto; background: white" src="{{ '/assets/img/railway-reconstruction/results/object-candidates.png' | relative_url }}" width="478" height="309" loading="lazy" alt="多帧聚合后经关键帧视锥与识别区域筛选的桥梁候选点云">
+    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/object-candidates.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：多帧聚合后经关键帧视锥与识别区域筛选的桥梁候选点云">
+      <img class="d-block" style="position: absolute; max-width: none; width: 103.01724%; height: auto; left: -0.64655%; top: -3.10345%" src="{{ '/assets/img/railway-reconstruction/results/object-candidates.png' | relative_url }}" width="478" height="309" loading="lazy" alt="多帧聚合后经关键帧视锥与识别区域筛选的桥梁候选点云">
     </a>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">（b）视锥与对象边界内的候选点云</p>
   </div>
@@ -105,26 +105,26 @@ permalink: /projects/monocular-depth-railway/
 <figure id="railway-figure-4" style="margin: 1.75rem 0 0">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.5rem; align-items: start">
 <div style="min-width: 0">
-    <a href="{{ '/assets/img/railway-reconstruction/results/rgb.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：铁路桥梁 RGB 输入图像">
-      <img class="img-fluid rounded border d-block mx-auto" style="width: 100%; height: auto; background: white" src="{{ '/assets/img/railway-reconstruction/results/rgb.png' | relative_url }}" width="1278" height="537" loading="lazy" alt="铁路桥梁 RGB 输入图像">
+    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/rgb.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：铁路桥梁 RGB 输入图像">
+      <img class="d-block" style="position: absolute; max-width: none; width: 150.70755%; height: auto; left: -25.23585%; top: -0.37736%" src="{{ '/assets/img/railway-reconstruction/results/rgb.png' | relative_url }}" width="1278" height="537" loading="lazy" alt="铁路桥梁 RGB 输入图像">
     </a>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">（a）RGB 图像</p>
   </div>
 <div style="min-width: 0">
-    <a href="{{ '/assets/img/railway-reconstruction/results/monocular-depth.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：铁路桥梁单目深度预测的颜色可视化">
-      <img class="img-fluid rounded border d-block mx-auto" style="width: 100%; height: auto; background: white" src="{{ '/assets/img/railway-reconstruction/results/monocular-depth.png' | relative_url }}" width="1278" height="533" loading="lazy" alt="铁路桥梁单目深度预测的颜色可视化">
+    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/monocular-depth.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：铁路桥梁单目深度预测的颜色可视化">
+      <img class="d-block" style="position: absolute; max-width: none; width: 150.70755%; height: auto; left: -25.23585%; top: -0.37736%" src="{{ '/assets/img/railway-reconstruction/results/monocular-depth.png' | relative_url }}" width="1278" height="533" loading="lazy" alt="铁路桥梁单目深度预测的颜色可视化">
     </a>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">（b）单目深度可视化</p>
   </div>
 <div style="min-width: 0">
-    <a href="{{ '/assets/img/railway-reconstruction/results/object-mask.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：桥梁对象分割掩膜叠加在 RGB 图像上">
-      <img class="img-fluid rounded border d-block mx-auto" style="width: 100%; height: auto; background: white" src="{{ '/assets/img/railway-reconstruction/results/object-mask.png' | relative_url }}" width="1227" height="538" loading="lazy" alt="桥梁对象分割掩膜叠加在 RGB 图像上">
+    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/object-mask.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：桥梁对象分割掩膜叠加在 RGB 图像上">
+      <img class="d-block" style="position: absolute; max-width: none; width: 147.47596%; height: auto; left: -23.79808%; top: -2.69231%" src="{{ '/assets/img/railway-reconstruction/results/object-mask.png' | relative_url }}" width="1227" height="538" loading="lazy" alt="桥梁对象分割掩膜叠加在 RGB 图像上">
     </a>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">（c）对象分割叠加</p>
   </div>
 <div style="min-width: 0">
-    <a href="{{ '/assets/img/railway-reconstruction/results/fused-cloud.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：融合单目深度与 LiDAR 几何约束后的三维点云">
-      <img class="img-fluid rounded border d-block mx-auto" style="width: 100%; height: auto; background: white" src="{{ '/assets/img/railway-reconstruction/results/fused-cloud.png' | relative_url }}" width="880" height="403" loading="lazy" alt="融合单目深度与 LiDAR 几何约束后的三维点云">
+    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/fused-cloud.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：融合单目深度与 LiDAR 几何约束后的三维点云">
+      <img class="d-block" style="position: absolute; max-width: none; width: 148.64865%; height: auto; left: -22.80405%; top: -6.21622%" src="{{ '/assets/img/railway-reconstruction/results/fused-cloud.png' | relative_url }}" width="880" height="403" loading="lazy" alt="融合单目深度与 LiDAR 几何约束后的三维点云">
     </a>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">（d）深度与 LiDAR 几何融合</p>
   </div>
@@ -132,10 +132,10 @@ permalink: /projects/monocular-depth-railway/
   <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6"><strong>Figure 4.</strong> RGB 图像、单目深度、对象分割与融合后的三维点云。</figcaption>
 </figure>
 
-<figure id="railway-figure-5" style="margin: 1.75rem 0 0">
+<figure id="railway-figure-5" style="max-width: 40rem; margin: 1.75rem auto 0">
 <div style="min-width: 0">
-    <a href="{{ '/assets/img/railway-reconstruction/results/boundary-reconstruction.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：对象边界约束下重建的桥梁立柱、横梁、轨道及周围植被">
-      <img class="img-fluid rounded border d-block mx-auto" style="width: 100%; height: auto; background: white" src="{{ '/assets/img/railway-reconstruction/results/boundary-reconstruction.png' | relative_url }}" width="824" height="364" loading="lazy" alt="对象边界约束下重建的桥梁立柱、横梁、轨道及周围植被">
+    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/boundary-reconstruction.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：对象边界约束下重建的桥梁立柱、横梁、轨道及周围植被">
+      <img class="d-block" style="position: absolute; max-width: none; width: 166.12903%; height: auto; left: -18.14516%; top: -16.12903%" src="{{ '/assets/img/railway-reconstruction/results/boundary-reconstruction.png' | relative_url }}" width="824" height="364" loading="lazy" alt="对象边界约束下重建的桥梁立柱、横梁、轨道及周围植被">
     </a>
   </div>
   <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6"><strong>Figure 5.</strong> 对象约束重建结果，展示桥梁立柱、横梁及轨道区域的三维表面形态。</figcaption>
@@ -151,14 +151,14 @@ permalink: /projects/monocular-depth-railway/
 <figure id="railway-figure-6" style="margin: 1.75rem 0 0">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.5rem; align-items: start">
 <div style="min-width: 0">
-    <a href="{{ '/assets/img/railway-reconstruction/results/front-view.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：铁路桥梁重建点云的前向俯视视角">
-      <img class="img-fluid rounded border d-block mx-auto" style="width: 100%; height: auto; background: white" src="{{ '/assets/img/railway-reconstruction/results/front-view.png' | relative_url }}" width="831" height="462" loading="lazy" alt="铁路桥梁重建点云的前向俯视视角">
+    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/front-view.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：铁路桥梁重建点云的前向俯视视角">
+      <img class="d-block" style="position: absolute; max-width: none; width: 148.39286%; height: auto; left: -27.85714%; top: -29.14286%" src="{{ '/assets/img/railway-reconstruction/results/front-view.png' | relative_url }}" width="831" height="462" loading="lazy" alt="铁路桥梁重建点云的前向俯视视角">
     </a>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">（a）前向俯视</p>
   </div>
 <div style="min-width: 0">
-    <a href="{{ '/assets/img/railway-reconstruction/results/side-view.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：铁路桥梁重建点云的侧向观察视角">
-      <img class="img-fluid rounded border d-block mx-auto" style="width: 100%; height: auto; background: white" src="{{ '/assets/img/railway-reconstruction/results/side-view.png' | relative_url }}" width="672" height="474" loading="lazy" alt="铁路桥梁重建点云的侧向观察视角">
+    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/side-view.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：铁路桥梁重建点云的侧向观察视角">
+      <img class="d-block" style="position: absolute; max-width: none; width: 116.66667%; height: auto; left: -0.86806%; top: -31.11111%" src="{{ '/assets/img/railway-reconstruction/results/side-view.png' | relative_url }}" width="672" height="474" loading="lazy" alt="铁路桥梁重建点云的侧向观察视角">
     </a>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">（b）侧向观察</p>
   </div>
@@ -176,14 +176,14 @@ permalink: /projects/monocular-depth-railway/
 <figure id="railway-figure-7" style="margin: 1.75rem 0 0">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.5rem; align-items: start">
 <div style="min-width: 0">
-    <a href="{{ '/assets/img/railway-reconstruction/results/rail-extraction.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：点云浏览界面中单独提取显示的轨道区域">
-      <img class="img-fluid rounded border d-block mx-auto" style="width: 100%; height: auto; background: white" src="{{ '/assets/img/railway-reconstruction/results/rail-extraction.png' | relative_url }}" width="1172" height="453" loading="lazy" alt="点云浏览界面中单独提取显示的轨道区域">
+    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/rail-extraction.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：点云浏览界面中单独提取显示的轨道区域">
+      <img class="d-block" style="position: absolute; max-width: none; width: 203.47222%; height: auto; left: -61.63194%; top: -23.05556%" src="{{ '/assets/img/railway-reconstruction/results/rail-extraction.png' | relative_url }}" width="1172" height="453" loading="lazy" alt="点云浏览界面中单独提取显示的轨道区域">
     </a>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">（a）轨道区域提取</p>
   </div>
 <div style="min-width: 0">
-    <a href="{{ '/assets/img/railway-reconstruction/results/crossbeam-extraction.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：点云浏览界面中按类别提取显示的多个横梁构件">
-      <img class="img-fluid rounded border d-block mx-auto" style="width: 100%; height: auto; background: white" src="{{ '/assets/img/railway-reconstruction/results/crossbeam-extraction.png' | relative_url }}" width="1174" height="478" loading="lazy" alt="点云浏览界面中按类别提取显示的多个横梁构件">
+    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/crossbeam-extraction.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：点云浏览界面中按类别提取显示的多个横梁构件">
+      <img class="d-block" style="position: absolute; max-width: none; width: 333.52273%; height: auto; left: -166.76136%; top: -89.09091%" src="{{ '/assets/img/railway-reconstruction/results/crossbeam-extraction.png' | relative_url }}" width="1174" height="478" loading="lazy" alt="点云浏览界面中按类别提取显示的多个横梁构件">
     </a>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">（b）横梁提取</p>
   </div>
@@ -201,14 +201,14 @@ permalink: /projects/monocular-depth-railway/
 <figure id="railway-figure-8" style="margin: 1.75rem 0 0">
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1.5rem; align-items: start">
 <div style="min-width: 0">
-    <a href="{{ '/assets/img/railway-reconstruction/results/frame-selection-a.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：第一种来源帧选择状态下的局部桥梁点云">
-      <img class="img-fluid rounded border d-block mx-auto" style="width: 100%; height: auto; background: white" src="{{ '/assets/img/railway-reconstruction/results/frame-selection-a.png' | relative_url }}" width="1058" height="516" loading="lazy" alt="第一种来源帧选择状态下的局部桥梁点云">
+    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/frame-selection-a.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：第一种来源帧选择状态下的局部桥梁点云">
+      <img class="d-block" style="position: absolute; max-width: none; width: 188.92857%; height: auto; left: -72.32143%; top: -47.42857%" src="{{ '/assets/img/railway-reconstruction/results/frame-selection-a.png' | relative_url }}" width="1058" height="516" loading="lazy" alt="第一种来源帧选择状态下的局部桥梁点云">
     </a>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">（a）帧选择状态一</p>
   </div>
 <div style="min-width: 0">
-    <a href="{{ '/assets/img/railway-reconstruction/results/frame-selection-b.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：另一种来源帧选择状态下的局部桥梁点云">
-      <img class="img-fluid rounded border d-block mx-auto" style="width: 100%; height: auto; background: white" src="{{ '/assets/img/railway-reconstruction/results/frame-selection-b.png' | relative_url }}" width="1176" height="471" loading="lazy" alt="另一种来源帧选择状态下的局部桥梁点云">
+    <a class="d-block rounded" style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--global-divider-color, #e0e0e0); background: #191919; isolation: isolate" href="{{ '/assets/img/railway-reconstruction/results/frame-selection-b.png' | relative_url }}" target="_blank" rel="noopener" aria-label="查看原图：另一种来源帧选择状态下的局部桥梁点云">
+      <img class="d-block" style="position: absolute; max-width: none; width: 210%; height: auto; left: -72.32143%; top: -34.57143%" src="{{ '/assets/img/railway-reconstruction/results/frame-selection-b.png' | relative_url }}" width="1176" height="471" loading="lazy" alt="另一种来源帧选择状态下的局部桥梁点云">
     </a>
     <p class="text-muted small" style="margin: 0.65rem 0 0; line-height: 1.6">（b）帧选择状态二</p>
   </div>
