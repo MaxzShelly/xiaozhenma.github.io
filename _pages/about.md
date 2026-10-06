@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: default
 title: About
 permalink: /
 subtitle: Multi-View Geometric Methods · Multimodal Perception · Spatial Reasoning · 3D Spatial Understanding
@@ -19,6 +19,8 @@ latest_posts:
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
+
+{% capture about_body %}
 
 <style id="about-page-style">
   /* About-only visual system. No shared theme or other page is changed. */
@@ -48,29 +50,29 @@ latest_posts:
     font-family: inherit;
   }
   .post:has(#about-page-style) > .post-header {
-    margin-bottom: 0;
+    margin-bottom: 32px;
   }
   .post:has(#about-page-style) .post-title {
-    margin: 0 0 8px;
+    margin: 0 0 12px;
     color: var(--global-text-color);
-    font-size: 40px;
+    font-size: clamp(42px, 5vw, 56px);
     font-weight: 300;
     line-height: 1.2;
     letter-spacing: normal;
   }
   .post:has(#about-page-style) .desc {
     max-width: none;
-    margin: 0 0 16px;
+    margin: 0;
     color: var(--global-text-color);
     font-size: 16px;
     font-weight: 300;
     line-height: 1.5;
   }
-  .post:has(#about-page-style) .clearfix > h1 {
+  .post:has(#about-page-style) .about-research-heading {
     max-width: none;
-    margin: 0 0 8px;
+    margin: 0 0 16px;
     color: var(--global-text-color);
-    font-size: 40px;
+    font-size: clamp(26px, 3vw, 32px);
     font-weight: 300;
     line-height: 1.2;
     letter-spacing: normal;
@@ -310,8 +312,6 @@ latest_posts:
   }
 </style>
 
-<h1>3D Spatial Understanding</h1>
-
 <p class="lead">Undergraduate Student in Electronic and Electrical Engineering<br>Southwest Jiaotong University × University of Leeds</p>
 
 I am currently enrolled in the joint undergraduate programme in Electronic and Electrical Engineering at Southwest Jiaotong University and the University of Leeds. My research interests focus on 3D spatial understanding: how to enable large models to understand geometric shapes, object structures, and spatial relationships in the physical world.
@@ -382,4 +382,22 @@ I am interested in graduate research opportunities and collaborations related to
       {% endfor %}
     </table>
   </div>
+</div>
+{% endcapture %}
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">Xiaozhen Ma</h1>
+    <h2 class="about-research-heading">3D Spatial Understanding</h2>
+    <p class="desc">{{ page.subtitle }}</p>
+  </header>
+  <article>
+    <div class="clearfix">{{ about_body | markdownify }}</div>
+    {% if page.social %}
+      <div class="social">
+        <div class="contact-icons">{% social_links %}</div>
+        <div class="contact-note">{{ site.contact_note }}</div>
+      </div>
+    {% endif %}
+  </article>
 </div>
