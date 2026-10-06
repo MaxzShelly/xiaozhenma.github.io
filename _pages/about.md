@@ -28,8 +28,8 @@ latest_posts:
     --about-muted: #626269;
     --about-surface: #f5f5f7;
     --about-line: #e5e5ea;
-    --about-accent: #0066cc;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --about-accent: #b509ac;
+    font-family: Roboto, sans-serif;
     font-size: 17px;
     font-weight: 400;
     line-height: 1.75;
@@ -42,39 +42,39 @@ latest_posts:
     --about-muted: #b0b0b8;
     --about-surface: #252527;
     --about-line: #3b3b40;
-    --about-accent: #66b3ff;
+    --about-accent: #d88ad6;
   }
   .post:has(#about-page-style) :is(h1, h2, h3, h4, p, blockquote, td, th) {
     font-family: inherit;
   }
   .post:has(#about-page-style) > .post-header {
-    margin-bottom: 40px;
+    margin-bottom: 0;
   }
   .post:has(#about-page-style) .post-title {
-    margin: 0 0 12px;
-    color: var(--about-ink);
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: -0.015em;
+    margin: 0 0 8px;
+    color: var(--global-text-color);
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: normal;
   }
   .post:has(#about-page-style) .desc {
-    max-width: 760px;
-    margin: 0;
-    color: var(--about-muted);
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.75;
+    max-width: none;
+    margin: 0 0 16px;
+    color: var(--global-text-color);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
   }
   .post:has(#about-page-style) .clearfix > h1 {
-    max-width: 800px;
-    margin: 0 0 24px;
-    color: var(--about-ink);
-    font-size: clamp(36px, 4.4vw, 56px);
-    font-weight: 650;
-    line-height: 1.1;
-    letter-spacing: -0.045em;
-    text-wrap: balance;
+    max-width: none;
+    margin: 0 0 8px;
+    color: var(--global-text-color);
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-wrap: wrap;
   }
   .post:has(#about-page-style) .clearfix > p {
     max-width: 760px;
@@ -189,10 +189,31 @@ latest_posts:
   .post:has(#about-page-style) .card-title a:hover {
     text-decoration: none;
   }
+  .post:has(#about-page-style) .row-cols-md-3 .card {
+    position: relative;
+  }
+  .post:has(#about-page-style) .row-cols-md-3 :is(.card-body, .card-title, .card-title a) {
+    position: static;
+  }
+  .post:has(#about-page-style) .row-cols-md-3 .card-title a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  .post:has(#about-page-style) .row-cols-md-3 .card:has(a:focus-visible) {
+    outline: 2px solid var(--about-accent);
+    outline-offset: 4px;
+  }
   .post:has(#about-page-style) a:focus-visible {
     outline: 2px solid var(--about-accent);
     outline-offset: 4px;
     border-radius: 2px;
+  }
+  .post:has(#about-page-style) .row-cols-md-3 .card-title a:focus-visible {
+    outline: none;
   }
   .post:has(#about-page-style) .clearfix > p.about-projects-link {
     margin: 28px 0 0 !important;
@@ -254,12 +275,6 @@ latest_posts:
   @media (max-width: 575px) {
     .post:has(#about-page-style) {
       padding-top: 0;
-    }
-    .post:has(#about-page-style) > .post-header {
-      margin-bottom: 32px;
-    }
-    .post:has(#about-page-style) .post-title {
-      font-size: 16px;
     }
     .post:has(#about-page-style) .clearfix > h2 {
       margin-top: 56px !important;
