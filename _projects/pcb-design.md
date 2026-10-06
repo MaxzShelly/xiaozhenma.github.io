@@ -116,7 +116,7 @@ permalink: /projects/pcb-design/
     <source src="{{ '/assets/video/pcb-audio-visualisation.mp4' | relative_url }}" type="video/mp4">
     Your browser does not support embedded video. <a href="{{ '/assets/video/pcb-audio-visualisation.mp4' | relative_url }}">Open the LED response demonstration.</a>
   </video>
-  <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6">Audio input and LED response demonstration. The video plays silently on a loop.</figcaption>
+  <figcaption class="text-muted small" style="margin-top: 0.85rem; line-height: 1.6">Audio input and LED response demonstration.</figcaption>
 </figure>
 
 </section>
