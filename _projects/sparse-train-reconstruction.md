@@ -12,6 +12,9 @@ permalink: /projects/sparse-train-reconstruction/
 
 <header class="post-header" style="margin-bottom: 2.75rem">
   <h1 class="post-title" style="font-size: clamp(1.5rem, 2.4vw, 2rem); line-height: 1.4; margin: 0">{{ page.paper_title }}</h1>
+  <p style="margin: 1rem 0 0; font-size: 1rem; line-height: 1.75">
+    <a href="https://arxiv.org/abs/2610.05758" target="_blank" rel="noopener noreferrer">Paper · arXiv:2610.05758</a>
+  </p>
   <div class="project-metadata" style="margin-top: 1.5rem; font-size: 1rem; font-weight: 300; line-height: 1.75">
     <p style="margin: 0">Xiaozhen Ma · State Key Laboratory of Rail Transit Vehicle System, Southwest Jiaotong University</p>
     <p class="text-muted small" style="margin: 0.25rem 0 0">Project Lead · April 2024–March 2025</p>
