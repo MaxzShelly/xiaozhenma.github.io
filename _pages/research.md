@@ -1,68 +1,66 @@
 ---
-layout: page
+layout: default
 title: Research
 permalink: /research/
-description: From 3D Reconstruction to Spatial Intelligence
+description: From 3D Reconstruction to Spatial Intelligence # Preserve the shared navigation/search entry on other pages.
+display_description: Towards 3D Spatial Understanding
 nav: true
 nav_order: 2
 ---
 
-## From 3D Reconstruction to Spatial Intelligence
+{% capture research_body %}
 
-My research interests have developed around one recurring question:
+## Towards 3D Spatial Understanding
 
-> **How can machines reconstruct, understand, and validate the 3D world when observations are incomplete?**
+**Combining Geometry, Multimodal Perception, and Large Language Models**
 
-In sparse railway reconstruction, this problem appeared as missing LiDAR measurements. In monocular depth estimation, it appeared as visually plausible but metrically inaccurate geometry. In intelligent CAD, it became the difference between visual similarity and correct topology or connectivity. In autonomous driving, it further raised the question of whether improved perception actually benefits downstream behaviour.
+My research interests centre on one question: how can large models understand the physical world through 3D geometry, object structures, and spatial relationships?
 
-These experiences gradually shifted my interest from 3D reconstruction toward 3D perception and spatial intelligence.
+I am interested in combining geometric methods with AI’s ability to interpret multi-view and multisensor observations. Geometric methods provide measurable spatial information, while learned models provide semantic knowledge, structural priors, and world knowledge. Combining the two may help models connect descriptions in images and language with explicit 3D spatial representations.
 
-## Research Journey
+My previous projects have provided foundations for this direction at different levels, from reconstructing the geometry of individual objects to recovering scenes containing multiple objects, and then to parametric CAD structures and learning models for autonomous driving. These experiences have gradually directed my attention towards how 3D information is represented, understood, and used for reasoning.
 
-### 2023 — Curiosity from Autonomous Driving
+## Research Foundations
 
-An L2 driving-assistance system first made me wonder how a machine converts sensor observations into a unified representation of lanes, vehicles, obstacles, distances, and planned trajectories.
+### Object Geometry | Point Cloud Completion and Surface Reconstruction
 
-### 2024 — Sparse 3D Reconstruction
+In the high-speed train-nose reconstruction project, I carried out multisensor data acquisition and studied a point-cloud completion method combining tri-axial projection with reverse hole-boundary identification. This experience led me to examine how object geometry can be recovered from incomplete observations and how missing data affects reconstructed surfaces. It laid a foundation for my subsequent study of 3D object shapes and boundaries.
 
-I began working on high-speed train reconstruction from sparse LiDAR observations and encountered severe missing regions caused by glass surfaces. Instead of continuing to search for boundaries only among existing points, I explored representing missing regions explicitly through tri-axial projection and reverse hole-boundary reasoning.
+### Scene Representation | Pixel-Level 3D Reconstruction and Physical Object Extraction
 
-**Core lesson:** Changing the representation of a problem can be more important than making the original method more complicated.
+In the transportation-scene reconstruction project, I explored combining multi-frame observations, monocular depth estimation, LiDAR measurements, and semantic boundary constraints, extending my work from individual shapes to scenes containing multiple physical objects. This work provided a foundation for studying object boundaries, positions, and relationships within a shared 3D coordinate system.
 
-### 2025 — Learning-Based Reconstruction
+### Structured Geometry | Intelligent CAD
 
-I explored pretrained monocular depth models for dense railway-scene reconstruction. Although the predicted depth maps appeared visually complete, some reconstructed 3D structures exhibited incorrect relative distances.
+Through CAD-Assistant, ParSeNet, Point2CAD, and CAD-Recode, I studied the connections between point clouds, surface segmentation, geometric structures, and editable CAD programs. I also conducted experiments on geometric constraints, knowledge-enhanced training, and multiple-candidate generation combined with execution checks and geometric verification. These experiences strengthened my interest in how structured representations can describe an object’s composition, topology, and geometric relationships to support models in reasoning about and modifying 3D objects.
 
-**Core lesson:** Visual plausibility does not guarantee geometric reliability.
+### Learning and Constraints | PIKAN-Drive
 
-### 2026 — Intelligent CAD
+During my summer research at the University of California, Irvine, I explored KAN and physics-informed learning through PilotNet steering prediction and Fast-BEV 3D object detection, comparing the effects of prediction-head structures and additional constraints on performance. This work gave me experimental experience in combining learned models with explicit priors. It also showed me that the effectiveness of this combination needs to be verified for each specific task.
 
-In intelligent CAD experiments, generated models could have plausible external shapes while containing incorrect hole positions, axis locations, topology, or connections between primitives. This moved my interest from reconstructing shapes toward understanding geometry and spatial relationships.
+## Current Research Questions
 
-### 2026 — Autonomous Driving
+1. How can images, point clouds, and multi-view geometry be organised into 3D representations that large models can use?
+2. How can semantic recognition be connected with measurable spatial properties such as dimensions, distances, orientations, and object boundaries?
+3. How can structured representations describe relationships such as connectivity, containment, adjacency, and relative position?
+4. How can models select suitable geometric tools, interpret their outputs, and use them to answer spatial questions?
 
-At UC Irvine, I studied KAN and physics-informed learning from PilotNet steering regression to Fast-BEV 3D detection. A key lesson came from failure: more physically reasonable auxiliary constraints did not automatically improve a more complex detection model. This strengthened my interest in hypothesis-driven experimentation and failure analysis.
+## Future Research Directions
 
-### Next — Reliable Spatial Intelligence
+I hope to explore spatial agents grounded in geometric information, connecting large models, perception systems, structured 3D representations, and geometric computation tools.
 
-My current interest is in combining learned priors, explicit geometry, sensor observations, and uncertainty to build more reliable 3D understanding.
+An initial direction is to enable a model to understand a spatial question, identify the relevant objects, and call appropriate tools for measurement and geometric analysis. For example, a scene agent could query object dimensions or measure the distance between two objects, while a CAD agent could inspect generated geometric structures and coordinate modelling and verification tools.
 
-## Current Questions
+These directions will build on my existing work in 3D reconstruction and CAD, and their specific capabilities and effectiveness still need to be verified through experiments. My long-term goal is to help large models understand what objects are, how they are structured, and how they relate to one another in 3D space, and to apply this understanding to robotics, autonomous driving, and intelligent design.
 
-1. How can learned priors recover missing 3D structure without producing geometrically unsupported hallucinations?
-2. How can we distinguish between visually plausible and geometrically reliable 3D predictions?
-3. How can semantic priors from foundation models be combined with explicit geometry, topology, depth, and point-cloud observations?
-4. When multiple 3D structures are plausible, can a model explicitly represent its uncertainty rather than producing one overconfident answer?
-5. Can perception uncertainty guide active observation and downstream robotic action?
+{% endcapture %}
 
-## Future Direction
-
-My long-term interest is not simply to improve the accuracy of an isolated visual model.
-
-I hope to study how intelligent systems can build 3D representations that are reliable, verifiable, and useful for real-world reasoning and action.
-
-A direction I am particularly interested in is:
-
-> Perception → Spatial Understanding → Uncertainty → Active Observation → Action
-
-This direction may connect with robotics, autonomous systems, embodied intelligence, 3D vision, geometric intelligence, or intelligent CAD. My central research identity remains **3D Perception and Spatial Intelligence**.
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-description">{{ page.display_description }}</p>
+  </header>
+  <article>
+    {{ research_body | markdownify }}
+  </article>
+</div>

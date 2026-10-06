@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: 3D Perception · Spatial Intelligence · Geometric Learning
+subtitle: Multi-View Geometric Methods · Multimodal Perception · Spatial Reasoning · 3D Spatial Understanding
 nav: true
 nav_order: 1
 
@@ -20,27 +20,27 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-<h1>Xiaozhen Ma</h1>
+<h1>3D Spatial Understanding</h1>
 
 <p class="lead">Undergraduate Student in Electronic and Electrical Engineering<br>Southwest Jiaotong University × University of Leeds</p>
 
-I am an undergraduate student in Electronic and Electrical Engineering at Southwest Jiaotong University and the University of Leeds.
+I am currently enrolled in the joint undergraduate programme in Electronic and Electrical Engineering at Southwest Jiaotong University and the University of Leeds. My research interests focus on 3D spatial understanding: how to enable large models to understand geometric shapes, object structures, and spatial relationships in the physical world.
 
-My research focuses on how intelligent systems perceive, reconstruct, and reason about the 3D world, particularly under sparse, incomplete, or uncertain observations.
+I am interested in combining multi-view geometric methods, multi-view and multisensor observations, and semantic information from AI. I hope to connect the information models recognise in images and language with measurable spatial properties of real 3D objects and scenes.
 
-My work spans sparse point-cloud reconstruction, monocular depth estimation, multimodal perception, intelligent CAD, and autonomous-driving perception. Across these projects, I have repeatedly encountered the same question: how can a model distinguish between a result that merely looks plausible and one that is geometrically reliable?
+My research experience includes SLAM, sparse point-cloud completion, dense scene reconstruction, intelligent CAD, and learning models for autonomous driving. These experiences have given me a foundation in 3D data acquisition, geometric reconstruction, and structured representations of physical objects. They have also prompted me to consider how models can progress from recognising objects and recovering shapes to understanding object structures and spatial relationships.
 
-I am particularly interested in combining learned semantic and structural priors with explicit geometry, real-world sensor observations, and validation mechanisms to build more reliable 3D representations.
+Building on this foundation, I hope to explore how large models can use 3D representations and geometric tools for spatial reasoning and 3D spatial understanding, with applications in robotics, autonomous driving, and computer-aided design.
 
-> **How can machines build reliable 3D understanding when what they see is incomplete?**
+> **How can large models connect what they see and describe with the 3D geometry of the real world?**
 
 ## Research Interests
 
 <div class="row row-cols-1 row-cols-md-2 g-5 mb-5">
-  <div class="col"><div class="card h-100"><div class="card-body p-3"><h4 class="card-title mb-2">3D Perception</h4><p class="card-text small mb-0">Reliable 3D representation from images, depth, point clouds, and multimodal sensor observations, especially under sparse, occluded, or incomplete conditions.</p></div></div></div>
-  <div class="col"><div class="card h-100"><div class="card-body p-3"><h4 class="card-title mb-2">Spatial Intelligence</h4><p class="card-text small mb-0">Understanding distance, orientation, visibility, connectivity, containment, contact, and topology rather than relying only on visual similarity.</p></div></div></div>
-  <div class="col"><div class="card h-100" style="transform: translateY(0.5cm)"><div class="card-body p-3"><h4 class="card-title mb-2">Geometry-Aware Learning</h4><p class="card-text small mb-0">Combining learned semantic and structural priors with explicit geometry, sensor measurements, topology, and deterministic constraints.</p></div></div></div>
-  <div class="col"><div class="card h-100" style="transform: translateY(0.5cm)"><div class="card-body p-3"><h4 class="card-title mb-2">Robotic Perception</h4><p class="card-text small mb-0">Connecting reliable spatial understanding with downstream reasoning, planning, and action in robotic and autonomous systems.</p></div></div></div>
+  <div class="col"><div class="card h-100"><div class="card-body p-3"><h4 class="card-title mb-2">3D Reconstruction and Representation</h4><p class="card-text small mb-0">Combining images, point clouds, and multisensor observations to reconstruct objects and scenes and represent their geometric shapes, boundaries, and structures.</p></div></div></div>
+  <div class="col"><div class="card h-100"><div class="card-body p-3"><h4 class="card-title mb-2">Spatial Understanding Supported by Multi-View Geometry and End-to-End Integration</h4><p class="card-text small mb-0">Combining multi-view geometric measurements, classification and recognition, and world knowledge acquired through machine learning and large AI models to understand object dimensions, positions, orientations, and relationships.</p></div></div></div>
+  <div class="col"><div class="card h-100" style="transform: translateY(0.5cm)"><div class="card-body p-3"><h4 class="card-title mb-2">3D Spatial Reasoning with Large Models</h4><p class="card-text small mb-0">Exploring how large language and multimodal models can use structured 3D information to answer spatial questions and reason about relationships between objects and scenes.</p></div></div></div>
+  <div class="col"><div class="card h-100" style="transform: translateY(0.5cm)"><div class="card-body p-3"><h4 class="card-title mb-2">Spatial Agents and Applications</h4><p class="card-text small mb-0">Exploring agents that connect perception models, geometric tools, and structured representations to support scene analysis, CAD modelling, and robotic applications.</p></div></div></div>
 </div>
 
 <h2 class="mt-5">Selected Research</h2>
