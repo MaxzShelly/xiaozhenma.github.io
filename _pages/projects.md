@@ -103,7 +103,26 @@ horizontal: false
   {% else %}
   <div class="row row-cols-1 row-cols-md-2">
     {% for project in sorted_projects %}
-      {% include projects.liquid %}
+      {% if category == 'Engineering' %}
+        {% assign engineering_title = project.title %}
+        {% assign engineering_description = project.description %}
+        {% case project.permalink %}
+          {% when '/projects/embedded-systems/' %}
+            {% assign engineering_title = 'STM32 Game' %}
+            {% assign engineering_description = 'Fisherman Day: An Embedded Game with Interactive Controls and Peripheral Integration' %}
+          {% when '/projects/fpga-digital-systems/' %}
+            {% assign engineering_title = 'FPGA Traffic Light Control' %}
+            {% assign engineering_description = 'A Modular Digital System with Countdown Display and Multiple Operating Modes' %}
+          {% when '/projects/pcb-design/' %}
+            {% assign engineering_title = 'Audio Visualisation PCB' %}
+            {% assign engineering_description = 'A Three-Band LED Audio Visualiser from Circuit Design to PCB Assembly and Testing' %}
+        {% endcase %}
+        {% comment %}Change listing text only; keep shared card markup and project detail pages intact.{% endcomment %}
+        {% capture engineering_card %}{% include projects.liquid %}{% endcapture %}
+        {{ engineering_card | replace: project.title, engineering_title | replace: project.description, engineering_description }}
+      {% else %}
+        {% include projects.liquid %}
+      {% endif %}
     {% endfor %}
   </div>
   {% endif %}

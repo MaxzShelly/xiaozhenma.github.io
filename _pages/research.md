@@ -55,7 +55,52 @@ These directions will build on my existing work in 3D reconstruction and CAD, an
 
 {% endcapture %}
 
-<div class="post">
+<style>
+  #research-page > .post-header {
+    margin-bottom: 48px;
+  }
+  #research-page article > h2 {
+    margin: 76px 0 28px;
+    line-height: 1.3;
+  }
+  #research-page article > h2:first-child {
+    margin-top: 0;
+  }
+  #research-page article > h3 {
+    margin: 44px 0 20px;
+    line-height: 1.4;
+  }
+  #research-page article > h2 + h3 {
+    margin-top: 0;
+  }
+  #research-page article > p {
+    margin: 0 0 24px;
+    line-height: 1.8;
+  }
+  #research-page article > ol {
+    margin: 0 0 24px;
+    padding-left: 1.5em;
+    line-height: 1.8;
+  }
+  #research-page article li + li {
+    margin-top: 16px;
+  }
+  @media (max-width: 575px) {
+    #research-page > .post-header {
+      margin-bottom: 36px;
+    }
+    #research-page article > h2 {
+      margin-top: 56px;
+      margin-bottom: 22px;
+    }
+    #research-page article > h3 {
+      margin-top: 36px;
+      margin-bottom: 18px;
+    }
+  }
+</style>
+
+<div class="post" id="research-page">
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
     <p class="post-description">{{ page.display_description }}</p>

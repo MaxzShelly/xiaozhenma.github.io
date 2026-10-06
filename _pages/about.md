@@ -25,9 +25,9 @@ latest_posts:
 <style id="about-page-style">
   /* About-only visual system. No shared theme or other page is changed. */
   .post:has(#about-page-style) {
-    --about-ink: #1d1d1f;
-    --about-body: #424245;
-    --about-muted: #626269;
+    --about-ink: #000000;
+    --about-body: #000000;
+    --about-muted: #000000;
     --about-surface: #f5f5f7;
     --about-line: #e5e5ea;
     --about-accent: #b509ac;
@@ -179,7 +179,7 @@ latest_posts:
     padding: 26px 24px !important;
   }
   .post:has(#about-page-style) a {
-    color: var(--about-accent);
+    color: var(--about-ink);
     text-decoration: none;
     text-underline-offset: 0.2em;
   }
