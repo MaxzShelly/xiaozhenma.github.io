@@ -31,9 +31,9 @@ latest_posts:
     --about-surface: #f5f5f7;
     --about-line: #e5e5ea;
     --about-accent: #b509ac;
-    font-family: Roboto, sans-serif;
+    font-family: inherit;
     font-size: 17px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.75;
     color: var(--about-body);
     padding: 16px 0 32px;
@@ -83,23 +83,23 @@ latest_posts:
     margin: 0 0 24px;
     color: var(--about-body);
     font-size: 17px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.8;
   }
   .post:has(#about-page-style) .clearfix > .lead {
     margin-bottom: 36px;
     color: var(--about-muted);
     font-size: 17px;
-    font-weight: 500;
+    font-weight: 300;
     line-height: 1.7;
   }
   .post:has(#about-page-style) .clearfix > h2 {
     margin: 76px 0 28px !important;
     color: var(--about-ink);
     font-size: clamp(27px, 3vw, 34px);
-    font-weight: 600;
+    font-weight: 300;
     line-height: 1.25;
-    letter-spacing: -0.03em;
+    letter-spacing: normal;
     text-wrap: balance;
   }
   .post:has(#about-page-style) blockquote {
@@ -115,9 +115,12 @@ latest_posts:
     margin: 0;
     color: var(--about-ink);
     font-size: 21px;
-    font-weight: 500;
+    font-weight: 300;
     line-height: 1.5;
-    letter-spacing: -0.015em;
+    letter-spacing: normal;
+  }
+  .post:has(#about-page-style) blockquote strong {
+    font-weight: 400;
   }
   .post:has(#about-page-style) .clearfix > .row {
     display: grid;
@@ -153,23 +156,23 @@ latest_posts:
     margin: 0 0 16px !important;
     color: var(--about-ink);
     font-size: 21px;
-    font-weight: 600;
+    font-weight: 300;
     line-height: 1.35;
-    letter-spacing: -0.025em;
+    letter-spacing: normal;
   }
   .post:has(#about-page-style) .card-subtitle {
     margin: 0 0 18px !important;
     color: var(--about-ink);
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 300;
     line-height: 1.5;
-    letter-spacing: -0.01em;
+    letter-spacing: normal;
   }
   .post:has(#about-page-style) .card-text {
     margin: 0 !important;
     color: var(--about-body);
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.7;
   }
   .post:has(#about-page-style) .row-cols-md-3 .card-body {
@@ -220,7 +223,7 @@ latest_posts:
   .post:has(#about-page-style) .clearfix > p.about-projects-link {
     margin: 28px 0 0 !important;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 300;
   }
   .post:has(#about-page-style) .news .table-responsive {
     max-height: none !important;
@@ -233,7 +236,7 @@ latest_posts:
     border-top: 1px solid var(--about-line);
     color: var(--about-body);
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.7;
     vertical-align: top;
   }
@@ -241,7 +244,7 @@ latest_posts:
     padding-right: 24px;
     color: var(--about-muted);
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 300;
     white-space: nowrap;
   }
   .post:has(#about-page-style) .social {
@@ -266,7 +269,7 @@ latest_posts:
     margin: 20px auto 0;
     color: var(--about-muted);
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.7;
   }
   @media (max-width: 899px) {
