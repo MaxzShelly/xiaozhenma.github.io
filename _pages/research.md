@@ -103,7 +103,6 @@ These directions will build on my existing work in 3D reconstruction and CAD, an
 <div class="post" id="research-page">
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-description">{{ page.display_description }}</p>
   </header>
   <article>
     {{ research_body | markdownify }}

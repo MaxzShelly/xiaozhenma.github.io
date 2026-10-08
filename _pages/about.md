@@ -352,7 +352,7 @@ Outside research, I serve as President of the Academic Innovation Base at SWJTUâ
 
 ## Contact
 
-I am interested in graduate research opportunities and collaborations related to 3D perception, spatial intelligence, geometric learning, robotic perception, and intelligent autonomous systems. You can reach me at <a href="mailto:shellyma626@163.com">shellyma626@163.com</a>.
+You can reach me at <a href="mailto:shellyma626@163.com">shellyma626@163.com</a>.
 
 <!-- Keep the following news corrections local to About, without changing the shared News collection. -->
 <h2><a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a></h2>
@@ -398,8 +398,10 @@ I am interested in graduate research opportunities and collaborations related to
     <div class="clearfix">{{ about_body | markdownify }}</div>
     {% if page.social %}
       <div class="social">
-        <div class="contact-icons">{% social_links %}</div>
-        <div class="contact-note">{{ site.contact_note }}</div>
+        <div class="contact-icons">
+          <a href="mailto:{{ site.data.socials.email }}" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="{{ site.data.socials.cv_pdf | relative_url }}" title="Cv pdf"><i class="ai ai-cv"></i></a>
+        </div>
       </div>
     {% endif %}
   </article>
