@@ -12,7 +12,11 @@ permalink: /projects/fpga-digital-systems/
 <header class="post-header" style="margin-bottom: 2.75rem">
   <h1 class="post-title" style="font-size: clamp(1.5rem, 2.4vw, 2rem); line-height: 1.4; margin: 0">FPGA Digital System Design</h1>
   <p class="text-muted" style="margin: 1rem 0 1.5rem; line-height: 1.6">FPGA-Based Traffic Light Control System</p>
-  <p class="text-muted small" style="margin: 0; line-height: 1.75">Quartus · Hardware Description Language · Logic Simulation · FPGA Testing</p>
+  <div class="project-metadata" style="margin-top: 1.5rem; font-size: 1rem; font-weight: 300; line-height: 1.75">
+    <p style="margin: 0">Xiaozhen Ma</p>
+    <p class="text-muted small" style="margin: 0.25rem 0 0">May–June 2026</p>
+    <p class="text-muted small" style="margin: 0.25rem 0 0">Quartus · Hardware Description Language · Logic Simulation · FPGA Testing</p>
+  </div>
 </header>
 
 <article style="line-height: 1.75">

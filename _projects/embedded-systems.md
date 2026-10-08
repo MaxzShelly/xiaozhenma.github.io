@@ -15,8 +15,8 @@ permalink: /projects/embedded-systems/
   <p class="text-muted" style="margin: 1rem 0 1.5rem; line-height: 1.6">STM32-Based Embedded Game Development</p>
   <div class="project-metadata" style="margin-top: 1.5rem; font-size: 1rem; font-weight: 300; line-height: 1.75">
     <p style="margin: 0">Xiaozhen Ma</p>
-    <p class="text-muted small" style="margin: 0.25rem 0 0">April–June 2026 · Three-Person Team</p>
-    <p class="text-muted small" style="margin: 0.25rem 0 0">My Role: Game 2 — Cooking Development</p>
+    <p class="text-muted small" style="margin: 0.25rem 0 0">April–June 2026</p>
+    <p class="text-muted small" style="margin: 0.25rem 0 0">STM32 · Embedded C · State Machines · Peripheral Integration</p>
   </div>
 </header>
 

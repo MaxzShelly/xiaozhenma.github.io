@@ -14,6 +14,7 @@ permalink: /projects/pcb-design/
   <p class="text-muted" style="margin: 1rem 0 1.5rem; line-height: 1.6">Audio-Visualisation PCB Design and Fabrication</p>
   <div class="project-metadata" style="margin-top: 1.5rem; font-size: 1rem; font-weight: 300; line-height: 1.75">
     <p style="margin: 0">Xiaozhen Ma</p>
+    <p class="text-muted small" style="margin: 0.25rem 0 0">March–May 2026</p>
     <p class="text-muted small" style="margin: 0.25rem 0 0">KiCad · Analogue Circuits · PCB Layout · Soldering &amp; Testing</p>
   </div>
 </header>
