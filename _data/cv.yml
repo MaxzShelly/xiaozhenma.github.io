@@ -53,10 +53,10 @@ cv:
         end_date: present
         summary: Developed and evaluated tool-augmented CAD generation and point-cloud-to-parametric-CAD reconstruction workflows.
         highlights:
-          - Deployed and evaluated CAD-Assistant through the FreeCAD Python API; optimised prompts with dimensional and geometric constraints to improve code executability, solid validity, and parametric-modelling quality.
-          - Reproduced Point2CAD and ParSeNet, implemented data-interface compatibility, and investigated multi-view and three-axis projection boundary constraints through comparative experiments.
-          - Developed a CAD-Recode-based pipeline that generates executable CadQuery programs from point clouds, validates them through CadQuery and OpenCascade/OCP, and produces editable CAD programs with B-Rep, STEP, and Solid outputs.
-          - Designed CAD-knowledge supervision, geometric verification, parameter refinement, structural diagnosis, and multi-candidate selection. The confirmed S2@100 pipeline reduced median Chamfer Distance by 13.4% relative to S0@10 while improving mean, P90, and mean IoU without reducing solid validity.
+          - Deployed and evaluated CAD-Assistant for tool-augmented CAD generation through the FreeCAD Python API, analysing task planning, code generation, geometric modelling, and execution feedback; optimised prompts with dimensional and geometric constraints to improve code executability, solid validity, and parametric modelling quality.
+          - Reproduced Point2CAD and ParSeNet, implemented data-interface compatibility between the two pipelines, and investigated multi-view and three-axis projection boundary constraints, showing that additional boundary supervision did not reliably improve the official segmentation baseline through comparative experiments.
+          - Developed a CAD-Recode-based point-cloud-to-parametric-CAD pipeline, generating executable CadQuery programs from point-cloud inputs, executing and validating them through CadQuery and OpenCascade/OCP, and producing editable CAD programs together with B-Rep, STEP, and Solid outputs.
+          - Designed and evaluated CAD-knowledge supervision, geometric verification, parameter refinement, structural diagnosis, and multi-candidate selection strategies; the independently confirmed S2@100 inference pipeline reduced median Chamfer Distance by 13.4% relative to S0@10 while also improving mean, P90, and mean IoU without reducing solid validity, establishing geometric candidate reranking as the strongest confirmed approach.
           - Supervised by Prof. Dong-Ming Yan and Prof. Mingyang Zhao.
 
       - company: State Key Laboratory of Rail Transit Vehicle System, Southwest Jiaotong University
@@ -64,55 +64,62 @@ cv:
         location: Chengdu, China
         start_date: 2025-04
         end_date: 2026-05
-        summary: Developed the FrustumDense-SAM-XC3D railway-scene reconstruction system using multi-frame LiDAR, RGB images, and monocular depth.
+        summary: Developed the FrustumDense-SAM-XC3D railway-scene 3D reconstruction system by integrating multi-frame LiDAR point clouds, RGB images, and monocular depth information into a pipeline covering point-cloud densification, depth fusion, object segmentation, occlusion handling, and scene visualization.
         highlights:
-          - Integrated point-cloud densification, depth fusion, object segmentation, occlusion handling, and scene visualisation into a single pipeline.
-          - Proposed multi-frame frustum back-projection densification across current, historical, and future frames to improve coverage and structural completeness around buildings, tracks, and trackside facilities.
-          - Integrated DepthPro metric depth with LiDAR pose constraints, patch-wise fitting, boundary resampling, and moving least-squares prediction to correct distant-region scale errors and generate dense 3D point clouds.
-          - Applied SAM3 to multi-frame image segmentation and object-boundary detection, with nested-object and occlusion management plus cross-frame co-visibility consistency checks.
-          - Designed class-aware radius filtering and patch-based rendering to suppress fusion noise and visualise railway assets by category.
+          - Proposed a multi-frame frustum back-projection densification method that projected LiDAR points from the current, historical, and future frames into the camera frustum for spatial aggregation, filling sparse regions around buildings, tracks, and trackside facilities to improve point-cloud coverage and structural completeness in large-scale scenes.
+          - Integrated DepthPro-based monocular metric depth estimation with LiDAR pose constraints and applied patch-wise fitting, boundary resampling, and moving least-squares prediction to correct scale errors in distant regions of the monocular depth maps and generate pixel-level dense 3D point clouds.
+          - Applied the pretrained SAM3 model to multi-frame image segmentation and object-boundary detection, used a tree-based data structure to manage nested objects and occlusion relationships, and implemented cross-frame co-visibility consistency checks for point-cloud matching, clustering, and unique object identification.
+          - Designed class-aware radius filtering and patch-based rendering algorithms to suppress accumulated noise from multi-frame point-cloud fusion, extract tracks, buildings, and transportation facilities by category, and visualize large-scale railway scenes for single-frame object extraction and railway asset presentation.
           - Supervised by Prof. Zhao Tang.
 
       - company: State Key Laboratory of Rail Transit Vehicle System, Southwest Jiaotong University
-        position: Project Lead — Machine Learning-Driven 3D Reconstruction of High-Speed Train Head Shapes
+        position: Project Lead — Sparse Point Cloud Completion and Surface Reconstruction of High-Speed Train Noses
         location: Chengdu, China
         start_date: 2024-04
         end_date: 2025-03
-        summary: Investigated robust reconstruction of high-speed train heads from sparse point-cloud observations.
+        summary: Built a portable point cloud acquisition system integrating LiDAR, a camera, and an IMU, and deployed FAST-LIVO2 for sensor fusion, pose estimation, and mapping.
         highlights:
-          - Constructed a portable multi-sensor acquisition device with LiDAR, cameras, and IMUs; developed a radar-vision tightly coupled SLAM framework based on FAST-LIVO2 with extended Kalman filtering for camera-pose optimisation.
-          - Improved registration with enhanced ICP and dynamic-threshold denoising; generated uniform, high-precision point clouds through normal-vector estimation and resampling.
-          - Introduced an incremental k-d tree for map storage and retrieval, plus motion-consistency-based dynamic-object exclusion for localisation robustness.
-          - Proposed tri-axial projection segmentation interpolation and reverse hole-boundary identification, raising model integrity from 75% to 98%.
-          - Explored Greedy triangulation, Poisson reconstruction, B-spline interpolation, Moving Cuboid, and radial-basis-function interpolation for complex surface modelling.
-          - Independently authored the technical report Three-Dimensional Surface Reconstruction of High-Speed Train Noses from Sparse Point Clouds.
+          - Established a point-cloud processing pipeline using moving least squares for smoothing and geometric completion to address missing observations in glass-window regions.
+          - Proposed a completion method combining tri-axial projection, section-based interpolation, and reverse hole-boundary identification to recover missing geometry from surrounding observations.
+          - Compared greedy projection triangulation, Poisson reconstruction, and Marching Cubes-based reconstruction, examining window-region recovery, surface continuity, and overall shape preservation.
+          - "Research output: Preprint posted on arXiv ([arXiv:2610.05758](https://arxiv.org/abs/2610.05758))."
           - Supervised by Prof. Zhao Tang.
+
+    Preprint:
+      - bullet: >-
+          Ma, X., Tang, Z., Lai, H., Chen, R., & Jin, J. (2026). A Three-Dimensional Reverse-Projection Method for Sparse Point Cloud Completion and Its Application to High-Speed Train Nose Reconstruction. arXiv Preprint.
+          <a href="https://doi.org/10.48550/arXiv.2610.05758" style="overflow-wrap: anywhere">https://doi.org/10.48550/arXiv.2610.05758</a>
 
     Projects:
       - name: FPGA-Based Digital System Design
         start_date: 2026-05
         end_date: 2026-06
-        summary: Developed functional modules for a hierarchical digital system using Quartus and a hardware description language; connected modules through predefined ports, performed logic simulation and waveform analysis, and completed FPGA hardware testing.
+        summary: Traffic-light controller development in Quartus/HDL, logic simulation, waveform analysis, and hardware testing.
 
       - name: STM32-Based Embedded Game Development
         start_date: 2026-04
         end_date: 2026-06
-        summary: Collaborated in a three-person team to develop an STM32 embedded game, contributing core mechanics and an independent feature or level; managed code with GitHub and documented development logs, system tests, and demonstrations.
+        summary: Embedded game development using STM32 hardware and peripherals.
 
       - name: Audio-Visualisation PCB Design and Fabrication
         start_date: 2026-03
         end_date: 2026-05
-        summary: Created a KiCad schematic and PCB layout for an audio-visualisation circuit using LEDs for low-, mid-, and high-frequency signals; soldered components and used a multimeter for measurement and troubleshooting.
+        summary: Three-band LED schematic and PCB layout in KiCad, component soldering, and multimeter testing.
 
       - name: Emerging Optoelectronic System Design
         start_date: 2025-10
         end_date: 2026-03
-        summary: Worked in an international team with University of Leeds students to research and design an optoelectronic system for a space-related challenge, including technical principles, commercial applications, environmental impact, engineering ethics, and an English-language design presentation video.
+        summary: Joint optoelectronic system design with University of Leeds students.
 
-      - name: MCU Embedded Systems — Line-Following Model Car and Washing Machine Controller
+      - name: Line-Following Model Car & Washing Machine Controller
         start_date: 2025-04
         end_date: 2025-05
-        summary: Programmed an STM32 line-following model car in Keil5 with LED display and MOSFET-based motion control, and implemented a washing-machine controller in Mbed with mode selection, child lock, time selection, pressure response, and light sensitivity.
+        summary: STM32 programming in Keil5, MOSFET motor control, and car-body assembly.
+
+      - name: Washing Machine Controller
+        start_date: 2025-04
+        end_date: 2025-05
+        summary: STM32 programming in Mbed, mode and timer control, child lock, and sensor responses.
 
     Awards:
       - title: Second Prize, AI Innovation Track
@@ -129,8 +136,8 @@ cv:
         awarder: SWJTU–Leeds Joint School, Southwest Jiaotong University
 
     Extracurricular Activities and Volunteer:
-      - label: Academic Innovation Base of SWJTU–Leeds Joint School, Southwest Jiaotong University (Sep 2023–Present)
-        details: Member (2023–2024); Head of Activities (2024–2025); President (2025–Present). As president, coordinated 30+ members across 4 departments, liaised with 80+ guests, planned events, venues, and themes, and led Leeds Tech Month, attracting 500+ teams and reaching 3,000+ faculty and students.
+      - label: Academic Innovation Base of SWJTU–Leeds Joint School, Southwest Jiaotong University (Sep 2023–May 2026)
+        details: Member (2023–2024); Head of Activities (2024–2025); President (2025–2026). As president, coordinated over 30 members and 4 departments, liaised with more than 80 guests, planned event schedules, venues, and themes, and spearheaded the development of the “Leeds Tech Month” flagship competition, attracting over 500 participating teams, with events reaching more than 3,000 faculty and students.
 
     Technical Skills:
       - label: Technical Skills
