@@ -63,7 +63,7 @@ cv:
         position: Project Lead — Sparse Point Cloud 3D Railway Scene Reconstruction Technology Driven by Monocular Depth Estimation
         location: Chengdu, China
         start_date: 2025-04
-        end_date: 2026-05
+        end_date: present
         summary: Developed the FrustumDense-SAM-XC3D railway-scene 3D reconstruction system by integrating multi-frame LiDAR point clouds, RGB images, and monocular depth information into a pipeline covering point-cloud densification, depth fusion, object segmentation, occlusion handling, and scene visualization.
         highlights:
           - Proposed a multi-frame frustum back-projection densification method that projected LiDAR points from the current, historical, and future frames into the camera frustum for spatial aggregation, filling sparse regions around buildings, tracks, and trackside facilities to improve point-cloud coverage and structural completeness in large-scale scenes.

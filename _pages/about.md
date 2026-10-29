@@ -348,7 +348,7 @@ Building on this foundation, I hope to explore how large models can use 3D repre
 
 ## Leadership and International Collaboration
 
-Outside research, I serve as President of the Academic Innovation Base at SWJTU–Leeds Joint School, coordinating research, competition, and academic activities across a 30+ member student organisation. Studying in the SWJTU–Leeds joint programme and conducting research at UC Irvine have strengthened my ability to read, discuss, and present technical work in English across international research environments.
+Led over 30 members across four departments, coordinating event logistics, guest communications, and planning for the “Leeds Tech Month” competition. Over three years, helped deliver approximately 150 lectures and events, provided support for more than 40 guests, and contributed to activities collectively involving over 100 teams and approximately 1,000 faculty and students.
 
 ## Contact
 
