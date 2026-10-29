@@ -357,8 +357,7 @@ You can reach me at <a href="mailto:shellyma626@163.com">shellyma626@163.com</a>
 <!-- Keep the following news corrections local to About, without changing the shared News collection. -->
 <h2><a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a></h2>
 <div class="news">
-  {% assign about_news = site.news | reverse %}
-  {% assign railway_project = site.projects | where: 'permalink', '/projects/monocular-depth-railway/' | first %}
+  {% assign about_news = site.news | where_exp: 'item', "item.path != '_news/2026-05-railway-reconstruction.md'" | reverse %}
   <div class="table-responsive"{% if page.announcements.scrollable and about_news.size > 3 %} style="max-height: 60vw"{% endif %}>
     <table class="table table-sm table-borderless">
       {% for item in about_news limit: page.announcements.limit %}
@@ -367,8 +366,6 @@ You can reach me at <a href="mailto:shellyma626@163.com">shellyma626@163.com</a>
         {% case item.path %}
           {% when '_news/2025-01-ai-competition.md' %}
             {% assign news_date = '2025-08-01' %}
-          {% when '_news/2026-05-railway-reconstruction.md' %}
-            {% capture news_content %}Completed the project “{{ railway_project.paper_title }}.”{% endcapture %}
           {% when '_news/2026-02-cas.md' %}
             {% assign news_content = 'Joined the Institute of Automation, Chinese Academy of Sciences, conducting research in geometric understanding and editable CAD reconstruction.' %}
         {% endcase %}

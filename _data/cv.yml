@@ -38,7 +38,7 @@ cv:
         position: "Project Lead — PIKAN-Drive: Progressive Physics-Informed KANs from PilotNet Steering Regression to Fast-BEV 3D Detection"
         location: Irvine, California, USA
         start_date: 2026-06
-        end_date: present
+        end_date: 2026-08
         summary: Led a progressive study of MLP, KAN, and PI-KAN architectures from PilotNet steering regression to Fast-BEV multi-camera 3D detection, establishing unified training, evaluation, and ablation pipelines.
         highlights:
           - Built a PilotNet benchmark on 45,406 sequential Udacity samples; the best PI-KAN achieved MAE 3.209 and RMSE 6.163, reducing error by 11.3% and 9.7% relative to the MLP baseline.
@@ -137,7 +137,7 @@ cv:
 
     Extracurricular Activities and Volunteer:
       - label: Academic Innovation Base of SWJTU–Leeds Joint School, Southwest Jiaotong University (Sep 2023–May 2026)
-        details: Member (2023–2024); Head of Activities (2024–2025); President (2025–2026). As president, coordinated over 30 members and 4 departments, liaised with more than 80 guests, planned event schedules, venues, and themes, and spearheaded the development of the “Leeds Tech Month” flagship competition, attracting over 500 participating teams, with events reaching more than 3,000 faculty and students.
+        details: Led over 30 members across four departments, coordinating event logistics, guest communications, and planning for the “Leeds Tech Month” competition. Over three years, helped deliver approximately 150 lectures and events, provided support for more than 40 guests, and contributed to activities collectively involving over 100 teams and approximately 1,000 faculty and students.
 
     Technical Skills:
       - label: Technical Skills
